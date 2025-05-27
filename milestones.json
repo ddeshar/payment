@@ -1,0 +1,187 @@
+{
+  "contracts": [
+    {
+      "name": "BRS",
+      "total": 204156689.31,
+      "milestones": [
+        {
+          "no": 1,
+          "plan": "เดือน มิ.ย. 68",
+          "description": "หลังได้รับใบสั่งซื้อ",
+          "percent": 30,
+          "amount": 61247006.79
+        },
+        {
+          "no": 2,
+          "plan": "เดือน ก.ค. 68",
+          "description": "เมื่อส่งมอบงาน Zone 1-3 และ RGV 8 คัน",
+          "percent": 20,
+          "amount": 40831337.86
+        },
+        {
+          "no": 3,
+          "plan": "เดือน ก.ย. 68",
+          "description": "เมื่อส่งมอบงาน Zone 4-6\nRGV Retrofit 24 คัน\nShuttle Rack ASRS 20,469 Location",
+          "percent": 20,
+          "amount": 40831337.86
+        },
+        {
+          "no": 4,
+          "plan": "เดือน ธ.ค. 68",
+          "description": "เมื่อส่งมอบงานและผ่านการทดสอบระบบการจัดการคลังสินค้าทั้งระบบ",
+          "percent": 30,
+          "amount": 61247006.8
+        }
+      ]
+    },
+    {
+      "name": "Auto Motion Works",
+      "total": 181230423.53,
+      "milestones": [
+        {
+          "no": 1,
+          "plan": "แ",
+          "paymentDate": "2025-06",
+          "description": "หลังได้รับใบสั่งซื้อ",
+          "percent": 30,
+          "amount": 54391272.24
+        },
+        {
+          "no": 2,
+          "plan": "เดือน มิ.ย. 68",
+          "paymentDate": "2025-06",
+          "description": "เมื่อส่งมอบสินค้า/เครื่องจักร",
+          "percent": 17,
+          "amount": 30812210.93
+        },
+        {
+          "no": 3,
+          "plan": "เดือน ก.ค. 68",
+          "paymentDate": "2025-07",
+          "description": "ติดตั้งและทดสอบระบบ Lift, Conveyor, POP-UP, RGV 8 คัน – Rack 10,234 location",
+          "percent": 28,
+          "amount": 50793897.42
+        },
+        {
+          "no": 4,
+          "plan": "เดือน ส.ค. 68",
+          "paymentDate": "2025-08",
+          "description": "ส่งมอบสินค้า Rack 10,234 locations (ยังไม่ติดตั้ง) + Retrofit RGV 11 คัน",
+          "percent": 6.22,
+          "amount": 112796.17
+        },
+        {
+          "no": 5,
+          "plan": "เดือน ก.ย. 68",
+          "paymentDate": "2025-09",
+          "description": "ติดตั้งและทดสอบ Rack 10,234 locations + Retrofit RGV 13 คัน",
+          "percent": 10.54,
+          "amount": 19109150.78
+        },
+        {
+          "no": 6,
+          "plan": "เดือน ธ.ค. 68",
+          "paymentDate": "2025-12",
+          "description": "ส่งมอบงานติดตั้งและจัดเก็บสินค้าอัตโนมัติทั้งระบบพร้อมใช้งาน",
+          "percent": 8.24,
+          "amount": 15607422.24
+        }
+      ]
+    },
+    {
+      "name": "ICAS Technology",
+      "total": 5032000.0,
+      "milestones": [
+        {
+          "no": 1,
+          "plan": "เดือน มิ.ย. 68",
+          "paymentDate": "2025-06",
+          "percent": 30,
+          "amount": 1509600.0
+        },
+        {
+          "no": 2,
+          "plan": "เดือน ก.ค. 68",
+          "paymentDate": "2025-07",
+          "percent": 30,
+          "amount": 1509600.0
+        },
+        {
+          "no": 3,
+          "plan": "เดือน ก.ย. 68",
+          "paymentDate": "2025-09",
+          "percent": 30,
+          "amount": 1509600.0
+        },
+        {
+          "no": 4,
+          "plan": "เดือน ธ.ค. 68",
+          "paymentDate": "2025-12",
+          "percent": 10,
+          "amount": 503200.0
+        }
+      ]
+    },
+    {
+      "name": "KM × TEN",
+      "total": 825000.0,
+      "milestones": [
+        {
+          "no": 1,
+          "plan": "เดือน มิ.ย. 68",
+          "paymentDate": "2025-06",
+          "percent": 20,
+          "amount": 165000.0
+        },
+        {
+          "no": 2,
+          "plan": "เดือน มิ.ย. 68",
+          "paymentDate": "2025-07",
+          "percent": 30,
+          "amount": 247500.0
+        },
+        {
+          "no": 3,
+          "plan": "เดือน มิ.ย. 68",
+          "paymentDate": "2025-09",
+          "percent": 30,
+          "amount": 247500.0
+        },
+        {
+          "no": 4,
+          "plan": "เดือน มิ.ย. 68",
+          "paymentDate": "2025-12",
+          "percent": 20,
+          "amount": 165000.0
+        }
+      ]
+    },
+    {
+      "name": "Get on Technology",
+      "total": 1285644.36,
+      "milestones": [
+        {
+          "no": 1,
+          "plan": "เดือน มิ.ย. 68",
+          "paymentDate": "2025-06",
+          "percent": 100,
+          "amount": 1285644.36
+        }
+      ]
+    },
+    {
+      "name": "Total IP Solutions",
+      "total": 652128.0,
+      "milestones": [
+        {
+          "no": 1,
+          "plan": "เดือน มิ.ย. 68",
+          "paymentDate": "2025-06",
+          "percent": 100,
+          "amount": 652128.0
+        }
+      ]
+    }
+  ],
+  "grand_total": 189245363.14
+}
