@@ -1,680 +1,750 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
-  <meta charset="UTF-8" />
-  <title>🏗️ งวดการชำระเงิน & การส่งมอบงาน (Dashboard)</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>    /* --------------  Core layout  -------------- */
-    :root {
-      --card-bg: #ffffff;
-      --card-radius: 20px;
-      --shadow: 0 8px 32px rgba(0,0,0,.1);
-      --shadow-hover: 0 12px 40px rgba(0,0,0,.15);
-      --primary: #667eea;      /* Beautiful blue gradient start */
-      --primary-dark: #764ba2; /* Beautiful blue gradient end */
-      --accent: #06d6a0;      /* Modern teal */
-      --accent-dark: #048a65;  /* Darker teal */
-      --danger: #ff6b6b;      /* Soft red */
-      --danger-dark: #ee5a52; /* Darker red */
-      --text: #2d3748;        /* Warm dark gray */
-      --subtext: #718096;     /* Medium gray */
-      --border: #e2e8f0;      /* Light gray */
-      --bg-primary: #f7fafc;  /* Very light gray */
-      --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --success-gradient: linear-gradient(135deg, #06d6a0 0%, #048a65 100%);
-      --danger-gradient: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
-    }
-    
-    * { 
-      box-sizing: border-box; 
-    }
-    
-    body {
-      margin: 0;
-      font-family: 'Kanit', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg-primary);
-      color: var(--text);
-      line-height: 1.6;
-      font-weight: 400;
-    }
-    
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 600;
-      text-align: center;
-      margin: 2rem 0;
-      background: var(--bg-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    h2, h3, h4 {
-      font-weight: 500;
-    }    /* --------------  Navigation  -------------- */
-    .nav-container {
-      background: var(--card-bg);
-      box-shadow: var(--shadow);
-      margin: 0 2rem 3rem;
-      border-radius: var(--card-radius);
-      padding: 1.5rem;
-      backdrop-filter: blur(10px);
-    }
-    
-    .nav-tabs {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    
-    .nav-tab {
-      background: transparent;
-      border: 2px solid var(--border);
-      border-radius: 16px;
-      padding: 1rem 1.75rem;
-      font-size: 0.95rem;
-      font-weight: 500;
-      font-family: 'Kanit', sans-serif;
-      cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      color: var(--text);
-      position: relative;
-      overflow: hidden;
-      min-width: 140px;
-      text-align: center;
-    }
-    
-    .nav-tab::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: var(--bg-gradient);
-      transition: left 0.3s ease;
-      z-index: -1;
-    }
-    
-    .nav-tab:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
-    }
-    
-    .nav-tab.active {
-      background: var(--bg-gradient);
-      color: white;
-      border-color: transparent;
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-hover);
-    }
-    
-    .nav-tab.active::before {
-      left: 0;
-    }
+    <meta charset="UTF-8" />
+    <title>🏗️ งวดการชำระเงิน & การส่งมอบงาน (Dashboard)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --------------  Core layout  -------------- */
+        :root {
+            --card-bg: #ffffff;
+            --card-radius: 20px;
+            --shadow: 0 8px 32px rgba(0, 0, 0, .1);
+            --shadow-hover: 0 12px 40px rgba(0, 0, 0, .15);
+            --primary: #667eea;
+            /* Beautiful blue gradient start */
+            --primary-dark: #764ba2;
+            /* Beautiful blue gradient end */
+            --accent: #06d6a0;
+            /* Modern teal */
+            --accent-dark: #048a65;
+            /* Darker teal */
+            --danger: #ff6b6b;
+            /* Soft red */
+            --danger-dark: #ee5a52;
+            /* Darker red */
+            --text: #2d3748;
+            /* Warm dark gray */
+            --subtext: #718096;
+            /* Medium gray */
+            --border: #e2e8f0;
+            /* Light gray */
+            --bg-primary: #f7fafc;
+            /* Very light gray */
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --success-gradient: linear-gradient(135deg, #06d6a0 0%, #048a65 100%);
+            --danger-gradient: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+        }
 
-    /* --------------  Dashboard sections  -------------- */
-    .dashboard-section {
-      display: none;
-    }
-    .dashboard-section.active {
-      display: block;
-    }    #dashboard {
-      padding: 0 2rem 3rem;
-    }
-    
-    .section-header {
-      text-align: center;
-      margin: 3rem 0 2rem;
-      padding: 2rem;
-      background: var(--card-bg);
-      border-radius: var(--card-radius);
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .section-header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-    }
-    
-    .section-header.customer::before {
-      background: var(--success-gradient);
-    }
-    
-    .section-header.vendor::before {
-      background: var(--danger-gradient);
-    }
-    
-    .section-header h2 {
-      margin: 0 0 1rem;
-      font-size: 2.2rem;
-      font-weight: 600;
-    }
-    
-    .section-header.customer h2 {
-      color: var(--accent);
-    }
-    
-    .section-header.vendor h2 {
-      color: var(--danger);
-    }
-    
-    .section-header p {
-      margin: 0;
-      color: var(--subtext);
-      font-size: 1.1rem;
-    }
-    
-    .contracts-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-      margin-bottom: 3rem;
-    }
-    
-    .contracts-grid.customer {
-      justify-content: center;
-    }
-    
-    .contracts-grid.vendor {
-      justify-content: center;
-    }    /* --------------  Contract card  -------------- */
-    .contract {
-      background: var(--card-bg);
-      border-radius: var(--card-radius);
-      box-shadow: var(--shadow);
-      padding: 2rem;
-      flex: 1 1 340px;
-      max-width: 450px;
-      display: flex;
-      flex-direction: column;
-      transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .contract.customer-card {
-      max-width: 100%;
-      flex: 1 1 100%;
-      margin: 0 2rem;
-    }
-    
-    .contract::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: var(--bg-gradient);
-    }
-    
-    .contract:hover { 
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: var(--shadow-hover);
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    .contract h2 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin: 0 0 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    
-    .total {
-      font-weight: 600;
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      border-radius: 12px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .total.customer {
-      background: var(--success-gradient);
-      color: white;
-    }
-    
-    .total.vendor {
-      background: var(--danger-gradient);
-      color: white;
-    }    /* --------------  Progress bar  -------------- */
-    .progress-bar {
-      height: 12px;
-      width: 100%;
-      background: var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      margin-bottom: 1.5rem;
-      position: relative;
-    }
-    
-    .progress-bar::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(90deg, 
-        rgba(255,255,255,0.3) 0%, 
-        rgba(255,255,255,0) 50%, 
-        rgba(255,255,255,0.3) 100%);
-      animation: shimmer 2s infinite;
-    }
-    
-    @keyframes shimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-    
-    .progress-bar-inner {
-      height: 100%;
-      background: var(--bg-gradient);
-      width: 0;
-      transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-      border-radius: 8px;
-      position: relative;
-    }    /* --------------  Milestones  -------------- */
-    .milestone {
-      background: rgba(102, 126, 234, 0.05);
-      border-left: 4px solid var(--primary);
-      border-radius: 0 12px 12px 0;
-      padding: 1rem 1.25rem;
-      margin-bottom: 1rem;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-    
-    .milestone:hover {
-      background: rgba(102, 126, 234, 0.1);
-      transform: translateX(4px);
-    }
-    
-    .milestone .head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .milestone .head span:first-child {
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    
-    .milestone .percent {
-      background: var(--bg-gradient);
-      color: white;
-      font-weight: 600;
-      font-size: 0.85rem;
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
-      white-space: nowrap;
-      min-width: 60px;
-      text-align: center;
-    }
-      .milestone .amount {
-      font-weight: 600;
-      font-size: 1rem;
-      color: var(--primary-dark);
-      margin: 0.5rem 0 0;
-    }
-    
-    .milestone p {
-      margin: 0.5rem 0 0;
-      font-size: 0.9rem;
-      color: var(--subtext);
-      white-space: pre-line;
-      line-height: 1.5;
-    }
-    
-    .payment-date {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 0.75rem;
-      padding: 0.5rem 0.75rem;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-    
-    .payment-date.overdue {
-      background: rgba(239, 68, 68, 0.1);
-      color: #dc2626;
-      border: 1px solid rgba(239, 68, 68, 0.2);
-    }
-    
-    .payment-date.urgent {
-      background: rgba(245, 158, 11, 0.1);
-      color: #d97706;
-      border: 1px solid rgba(245, 158, 11, 0.2);
-    }
-    
-    .payment-date.soon {
-      background: rgba(59, 130, 246, 0.1);
-      color: #2563eb;
-      border: 1px solid rgba(59, 130, 246, 0.2);
-    }
-    
-    .payment-date.normal {
-      background: rgba(16, 185, 129, 0.1);
-      color: #059669;
-      border: 1px solid rgba(16, 185, 129, 0.2);
-    }/* --------------  Summary Dashboard  -------------- */
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      padding: 0 2rem 3rem;
-    }
-    
-    .summary-card {
-      background: var(--card-bg);
-      border-radius: var(--card-radius);
-      box-shadow: var(--shadow);
-      padding: 2.5rem 2rem;
-      text-align: center;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .summary-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: var(--bg-gradient);
-    }
-    
-    .summary-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-    }
-    
-    .summary-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      display: block;
-    }
-    
-    .summary-number {
-      font-size: 2.75rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-      background: var(--bg-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .summary-label {
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--text);
-      margin-bottom: 1rem;
-    }
-    
-    .summary-detail {
-      font-size: 0.95rem;
-      color: var(--subtext);
-      line-height: 1.5;
-    }    /* --------------  Chart Dashboard  -------------- */
-    .chart-container {
-      background: var(--card-bg);
-      border-radius: var(--card-radius);
-      box-shadow: var(--shadow);
-      padding: 2.5rem;
-      margin: 0 2rem 2rem;
-      transition: all 0.3s ease;
-    }
-    
-    .chart-container:hover {
-      box-shadow: var(--shadow-hover);
-    }
-    
-    .chart {
-      height: 320px;
-      display: flex;
-      align-items: end;
-      gap: 1.5rem;
-      padding: 1.5rem 0;
-      border-bottom: 2px solid var(--border);
-    }
-    
-    .chart-bar {
-      flex: 1;
-      background: var(--bg-gradient);
-      border-radius: 8px 8px 0 0;
-      min-height: 20px;
-      position: relative;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: pointer;
-    }
-    
-    .chart-bar:hover {
-      opacity: 0.8;
-      transform: scale(1.05);
-    }
-    
-    .chart-bar-label {
-      position: absolute;
-      bottom: -40px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--text);
-      text-align: center;
-      width: 120px;
-    }
-    
-    .chart-bar-value {
-      position: absolute;
-      top: -35px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--text);
-      white-space: nowrap;
-      background: white;
-      padding: 0.25rem 0.5rem;
-      border-radius: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
+        body {
+            margin: 0;
+            font-family: 'Kanit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text);
+            line-height: 1.6;
+            font-weight: 400;
+        }
 
-    /* --------------  Small screens  -------------- */
-    @media (max-width: 500px) {
-      .contract { flex: 1 1 100%; }
-      .nav-container { margin: 0 1rem 2rem; }
-      #dashboard { padding: 0 1rem 3rem; }
-      .summary-grid { padding: 0 1rem 3rem; }
-      .chart-container { margin: 0 1rem 2rem; }
-    }
-  </style>
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin: 2rem 0;
+            background: var(--bg-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2,
+        h3,
+        h4 {
+            font-weight: 500;
+        }
+
+        /* --------------  Navigation  -------------- */        .nav-container {
+            background: var(--card-bg);
+            box-shadow: var(--shadow);
+            margin: 0 2rem 2rem;
+            border-radius: var(--card-radius);
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-tab {
+            background: transparent;
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem 1.75rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            font-family: 'Kanit', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--text);
+            position: relative;
+            overflow: hidden;
+            min-width: 140px;
+            text-align: center;
+        }
+
+        .nav-tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-gradient);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .nav-tab:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+        }
+
+        .nav-tab.active {
+            background: var(--bg-gradient);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .nav-tab.active::before {
+            left: 0;
+        }
+
+        /* --------------  Dashboard sections  -------------- */
+        .dashboard-section {
+            display: none;
+        }
+
+        .dashboard-section.active {
+            display: block;
+        }        #dashboard {
+            padding: 0 2rem 2rem;
+        }        .section-header {
+            text-align: center;
+            margin: 2rem 0 2rem;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: var(--card-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .section-header.customer::before {
+            background: var(--success-gradient);
+        }
+
+        .section-header.vendor::before {
+            background: var(--danger-gradient);
+        }
+
+        .section-header h2 {
+            margin: 0 0 1rem;
+            font-size: 2.2rem;
+            font-weight: 600;
+        }
+
+        .section-header.customer h2 {
+            color: var(--accent);
+        }
+
+        .section-header.vendor h2 {
+            color: var(--danger);
+        }
+
+        .section-header p {
+            margin: 0;
+            color: var(--subtext);
+            font-size: 1.1rem;
+        }
+
+        .contracts-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .contracts-grid.customer {
+            justify-content: center;
+        }
+
+        .contracts-grid.vendor {
+            justify-content: center;
+        }
+
+        /* --------------  Contract card  -------------- */
+        .contract {
+            background: var(--card-bg);
+            border-radius: var(--card-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            flex: 1 1 340px;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+            transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contract.customer-card {
+            max-width: 100%;
+            flex: 1 1 100%;
+            margin: 0 2rem;
+        }
+
+        .contract::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--bg-gradient);
+        }
+
+        .contract:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .contract h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0 0 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .total {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .total.customer {
+            background: var(--success-gradient);
+            color: white;
+        }
+
+        .total.vendor {
+            background: var(--danger-gradient);
+            color: white;
+        }
+
+        /* --------------  Progress bar  -------------- */
+        .progress-bar {
+            height: 12px;
+            width: 100%;
+            background: var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .progress-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg,
+                    rgba(255, 255, 255, 0.3) 0%,
+                    rgba(255, 255, 255, 0) 50%,
+                    rgba(255, 255, 255, 0.3) 100%);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .progress-bar-inner {
+            height: 100%;
+            background: var(--bg-gradient);
+            width: 0;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 8px;
+            position: relative;
+        }
+
+        /* --------------  Milestones  -------------- */
+        .milestone {
+            background: rgba(102, 126, 234, 0.05);
+            border-left: 4px solid var(--primary);
+            border-radius: 0 12px 12px 0;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .milestone:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateX(4px);
+        }
+
+        .milestone .head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .milestone .head span:first-child {
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .milestone .percent {
+            background: var(--bg-gradient);
+            color: white;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            white-space: nowrap;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .milestone .amount {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--primary-dark);
+            margin: 0.5rem 0 0;
+        }
+
+        .milestone p {
+            margin: 0.5rem 0 0;
+            font-size: 0.9rem;
+            color: var(--subtext);
+            white-space: pre-line;
+            line-height: 1.5;
+        }
+
+        .payment-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .payment-date.overdue {
+            background: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        .payment-date.urgent {
+            background: rgba(245, 158, 11, 0.1);
+            color: #d97706;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        .payment-date.soon {
+            background: rgba(59, 130, 246, 0.1);
+            color: #2563eb;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .payment-date.normal {
+            background: rgba(16, 185, 129, 0.1);
+            color: #059669;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        /* --------------  Summary Dashboard  -------------- */        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem 2rem;
+        }
+
+        .summary-card {
+            background: var(--card-bg);
+            border-radius: var(--card-radius);
+            box-shadow: var(--shadow);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .summary-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--bg-gradient);
+        }
+
+        .summary-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .summary-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .summary-number {
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            background: var(--bg-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .summary-label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .summary-detail {
+            font-size: 0.95rem;
+            color: var(--subtext);
+            line-height: 1.5;
+        }
+
+        /* --------------  Chart Dashboard  -------------- */        .chart-container {
+            background: var(--card-bg);
+            border-radius: var(--card-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin: 0 2rem 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .chart-container:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .chart {
+            height: 320px;
+            display: flex;
+            align-items: end;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .chart-bar {
+            flex: 1;
+            background: var(--bg-gradient);
+            border-radius: 8px 8px 0 0;
+            min-height: 20px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .chart-bar:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+
+        .chart-bar-label {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text);
+            text-align: center;
+            width: 120px;
+        }
+
+        .chart-bar-value {
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text);
+            white-space: nowrap;
+            background: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }        /* --------------  Small screens  -------------- */
+        @media (max-width: 500px) {
+            .contract {
+                flex: 1 1 100%;
+            }
+
+            .nav-container {
+                margin: 0 1rem 2rem;
+            }
+
+            #dashboard {
+                padding: 0 1rem 2rem;
+            }
+
+            .summary-grid {
+                padding: 0 1rem 2rem;
+            }
+
+            .chart-container {
+                margin: 0 1rem 2rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <h1>งวดการชำระเงิน & การส่งมอบงาน</h1>
-  
-  <div class="nav-container">    <div class="nav-tabs">
-      <button class="nav-tab active" onclick="showDashboard('detailed')">
-        📋 รายละเอียดโครงการ
-      </button>
-      <button class="nav-tab" onclick="showDashboard('summary')">
-        💰 สรุปการเงิน
-      </button>
-      <button class="nav-tab" onclick="showDashboard('chart')">
-        📊 กราฟเปรียบเทียบ
-      </button>
-      <button class="nav-tab" onclick="showDashboard('timeline')">
-        ⏰ ไทม์ไลน์การส่งมอบ
-      </button>
-      <button class="nav-tab" onclick="showDashboard('cashflow')">
-        💸 กระแสเงินสด
-      </button>
+    <h1>งวดการชำระเงิน & การส่งมอบงาน</h1>
+
+    <div class="nav-container">
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showDashboard('detailed')">
+                📋 รายละเอียดโครงการ
+            </button>
+            <button class="nav-tab" onclick="showDashboard('summary')">
+                💰 สรุปการเงิน
+            </button>
+            <button class="nav-tab" onclick="showDashboard('chart')">
+                📊 กราฟเปรียบเทียบ
+            </button>
+            <button class="nav-tab" onclick="showDashboard('timeline')">
+                ⏰ ไทม์ไลน์การส่งมอบ
+            </button>
+            <button class="nav-tab" onclick="showDashboard('cashflow')">
+                💸 กระแสเงินสด
+            </button>
+        </div>
     </div>
-  </div>
 
-  <!-- Detailed Dashboard -->
-  <div id="detailed-dashboard" class="dashboard-section active">
-    <div id="dashboard"></div>
-  </div>
-
-  <!-- Summary Dashboard -->
-  <div id="summary-dashboard" class="dashboard-section">
-    <div class="summary-grid" id="summary-grid"></div>
-  </div>
-
-  <!-- Chart Dashboard -->
-  <div id="chart-dashboard" class="dashboard-section">
-    <div class="chart-container">
-      <h2 style="margin-top: 0;">มูลค่าโครงการแต่ละบริษัท</h2>
-      <div class="chart" id="contract-chart"></div>
+    <!-- Detailed Dashboard -->
+    <div id="detailed-dashboard" class="dashboard-section active">
+        <div id="dashboard"></div>
     </div>
-  </div>
 
-  <!-- Timeline Dashboard -->
-  <div id="timeline-dashboard" class="dashboard-section">
-    <div id="timeline-container"></div>
-  </div>
+    <!-- Summary Dashboard -->
+    <div id="summary-dashboard" class="dashboard-section">
+        <div class="summary-grid" id="summary-grid"></div>
+    </div>
 
-  <!-- Cash Flow Dashboard -->
-  <div id="cashflow-dashboard" class="dashboard-section">
-    <div id="cashflow-container"></div>
-  </div>
+    <!-- Chart Dashboard -->
+    <div id="chart-dashboard" class="dashboard-section">
+        <div class="chart-container">
+            <h2 style="margin-top: 0;">มูลค่าโครงการแต่ละบริษัท</h2>
+            <div class="chart" id="contract-chart"></div>
+        </div>
+    </div>
 
-  <script>
-    let contractsData = [];
+    <!-- Timeline Dashboard -->
+    <div id="timeline-dashboard" class="dashboard-section">
+        <div id="timeline-container"></div>
+    </div>
 
-    /* ---------  Load JSON + render  --------- */
-    fetch('milestones.json')
-      .then(r => r.json())
-      .then(data => {
-        contractsData = data.contracts;
-        buildDetailedDashboard(contractsData);
-        buildSummaryDashboard(contractsData);
-        buildChartDashboard(contractsData);
-        buildTimelineDashboard(contractsData);
-        buildCashFlowDashboard(contractsData);
-      })
-      .catch(err => {
-        console.error('Error loading data:', err);
-        document.getElementById('dashboard').innerHTML = 
-          '<div style="text-align: center; color: red; padding: 2rem;">เกิดข้อผิดพลาดในการโหลดข้อมูล</div>';
-      });
+    <!-- Cash Flow Dashboard -->
+    <div id="cashflow-dashboard" class="dashboard-section">
+        <div id="cashflow-container"></div>
+    </div>
 
-    /* ---------  Dashboard Navigation  --------- */
-    function showDashboard(type) {
-      // Hide all sections
-      document.querySelectorAll('.dashboard-section').forEach(section => {
-        section.classList.remove('active');
-      });
-      
-      // Remove active class from all tabs
-      document.querySelectorAll('.nav-tab').forEach(tab => {
-        tab.classList.remove('active');
-      });
-      
-      // Show selected section
-      document.getElementById(type + '-dashboard').classList.add('active');
-      
-      // Add active class to clicked tab
-      event.target.classList.add('active');
-    }    /* ---------  Detailed Dashboard (Original)  --------- */
-    function buildDetailedDashboard(contracts) {
-      const dash = document.getElementById('dashboard');
-      dash.innerHTML = '';
+    <script>
+        let contractsData = [];
 
-      // Separate customer and vendors
-      const customer = contracts.find(c => c.name === 'BRS');
-      const vendors = contracts.filter(c => c.name !== 'BRS');
+        /* ---------  Load JSON + render  --------- */
+        fetch('milestones.json')
+            .then(r => r.json())
+            .then(data => {
+                contractsData = data.contracts;
+                buildDetailedDashboard(contractsData);
+                buildSummaryDashboard(contractsData);
+                buildChartDashboard(contractsData);
+                buildTimelineDashboard(contractsData);
+                buildCashFlowDashboard(contractsData);
+            })
+            .catch(err => {
+                console.error('Error loading data:', err);
+                document.getElementById('dashboard').innerHTML =
+                    '<div style="text-align: center; color: red; padding: 2rem;">เกิดข้อผิดพลาดในการโหลดข้อมูล</div>';
+            });
 
-      // Add customer section
-      if (customer) {
-        // Customer header
-        const customerHeader = document.createElement('div');
-        customerHeader.className = 'section-header customer';
-        customerHeader.innerHTML = `
+        /* ---------  Dashboard Navigation  --------- */
+        function showDashboard(type) {
+            // Hide all sections
+            document.querySelectorAll('.dashboard-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(type + '-dashboard').classList.add('active');
+
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }    /* ---------  Detailed Dashboard (Original)  --------- */
+        function buildDetailedDashboard(contracts) {
+            const dash = document.getElementById('dashboard');
+            dash.innerHTML = '';
+
+            // Separate customer and vendors
+            const customer = contracts.find(c => c.name === 'BRS');
+            const vendors = contracts.filter(c => c.name !== 'BRS');
+
+            // Add customer section
+            if (customer) {
+                // Customer header
+                const customerHeader = document.createElement('div');
+                customerHeader.className = 'section-header customer';
+                customerHeader.innerHTML = `
           <h2>💰 รายรับจากลูกค้า</h2>
           <p>เงินที่บริษัทจะได้รับจากโครงการนี้</p>
         `;
-        dash.appendChild(customerHeader);
+                dash.appendChild(customerHeader);
 
-        // Customer card container
-        const customerContainer = document.createElement('div');
-        customerContainer.className = 'contracts-grid customer';
-        const card = createContractCard(customer, 'customer');
-        customerContainer.appendChild(card);
-        dash.appendChild(customerContainer);
-      }
+                // Customer card container
+                const customerContainer = document.createElement('div');
+                customerContainer.className = 'contracts-grid customer';
+                const card = createContractCard(customer, 'customer');
+                customerContainer.appendChild(card);
+                dash.appendChild(customerContainer);
+            }
 
-      // Add vendors section
-      if (vendors.length > 0) {
-        // Vendors header
-        const vendorHeader = document.createElement('div');
-        vendorHeader.className = 'section-header vendor';
-        vendorHeader.innerHTML = `
+            // Add vendors section
+            if (vendors.length > 0) {
+                // Vendors header
+                const vendorHeader = document.createElement('div');
+                vendorHeader.className = 'section-header vendor';
+                vendorHeader.innerHTML = `
           <h2>💸 รายจ่ายให้ผู้รับเหมา</h2>
           <p>เงินที่บริษัทต้องจ่ายให้กับผู้รับเหมาและซัพพลายเออร์</p>
         `;
-        dash.appendChild(vendorHeader);
+                dash.appendChild(vendorHeader);
 
-        // Vendors card container
-        const vendorContainer = document.createElement('div');
-        vendorContainer.className = 'contracts-grid vendor';
-        vendors.forEach(vendor => {
-          const card = createContractCard(vendor, 'vendor');
-          vendorContainer.appendChild(card);
-        });
-        dash.appendChild(vendorContainer);
-      }
-    }    function createContractCard(contract, type) {
-      const card = document.createElement('section');
-      card.className = 'contract';
-      
-      const isCustomer = type === 'customer';
-      
-      // Add customer-card class for full width
-      if (isCustomer) {
-        card.classList.add('customer-card');
-      }
-      
-      const borderColor = isCustomer ? 'var(--accent)' : 'var(--danger)';
-      const icon = isCustomer ? '🏢' : '🏗️';
-      const label = isCustomer ? 'จะได้รับ' : 'ต้องจ่าย';
-      const bgGradient = isCustomer ? 'var(--success-gradient)' : 'var(--danger-gradient)';
-      
-      card.style.borderLeft = `4px solid ${borderColor}`;
+                // Vendors card container
+                const vendorContainer = document.createElement('div');
+                vendorContainer.className = 'contracts-grid vendor';
+                vendors.forEach(vendor => {
+                    const card = createContractCard(vendor, 'vendor');
+                    vendorContainer.appendChild(card);                });
+                dash.appendChild(vendorContainer);
+            }
+            
+            // Add cumulative cash flow footer to Detailed Dashboard
+            const customerForFooter = contracts.find(c => c.name === 'BRS');
+            const vendorsForFooter = contracts.filter(c => c.name !== 'BRS');
+            const totalReceivable = customerForFooter ? customerForFooter.total : 0;
+            const totalPayable = vendorsForFooter.reduce((sum, v) => sum + v.total, 0);
+            const netCashFlow = totalReceivable - totalPayable;
+            const profitMargin = totalReceivable > 0 ? ((netCashFlow / totalReceivable) * 100) : 0;
+            
+            const footerDiv = document.createElement('div');
+            footerDiv.innerHTML = `
+                <div style="
+                  background: linear-gradient(135deg, ${netCashFlow >= 0 ? 'var(--accent)' : '#ef4444'}, ${netCashFlow >= 0 ? '#059669' : '#dc2626'}); 
+                  color: white;                  padding: 2rem; 
+                  border-radius: 16px; 
+                  text-align: center; 
+                  margin: 2rem 2rem 0;
+                  box-shadow: var(--shadow);
+                ">
+                  <div style="font-size: 1rem; margin-bottom: 0.5rem; opacity: 0.9;">💼 กระแสเงินสะสม</div>
+                  <div style="font-size: 2.2rem; font-weight: bold; margin-bottom: 0.5rem;">
+                    ${netCashFlow >= 0 ? '📈' : '📉'} ${fmt(Math.abs(netCashFlow))} บาท
+                  </div>
+                  <div style="font-size: 0.9rem; opacity: 0.8;">
+                    ${netCashFlow >= 0 ? 'เงินคงเหลือสุทธิ' : 'เงินขาดแคลนสุทธิ'} • อัตรากำไร ${profitMargin.toFixed(1)}%
+                  </div>
+                </div>
+            `;
+            dash.appendChild(footerDiv);
+        }function createContractCard(contract, type) {
+            const card = document.createElement('section');
+            card.className = 'contract';
 
-      /* Header + total */
-      card.innerHTML = `
+            const isCustomer = type === 'customer';
+
+            // Add customer-card class for full width
+            if (isCustomer) {
+                card.classList.add('customer-card');
+            }
+
+            const borderColor = isCustomer ? 'var(--accent)' : 'var(--danger)';
+            const icon = isCustomer ? '🏢' : '🏗️';
+            const label = isCustomer ? 'จะได้รับ' : 'ต้องจ่าย';
+            const bgGradient = isCustomer ? 'var(--success-gradient)' : 'var(--danger-gradient)';
+
+            card.style.borderLeft = `4px solid ${borderColor}`;
+
+            /* Header + total */
+            card.innerHTML = `
         <h2>${icon} ${contract.name}</h2>
         <div class="total ${type}" style="background: ${bgGradient};">
           <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.25rem;">${label}</div>
@@ -685,65 +755,273 @@
         </div>
         <div class="milestones"></div>
       `;      /* Milestone list */
-      const list = card.querySelector('.milestones');
-      let cumulative = 0;
-      contract.milestones.forEach((ms, index) => {
-        cumulative += ms.percent;
-        const milestoneIcon = getMilestoneIcon(index + 1);
-        
-        // Format payment date for vendors only
-        let paymentDateHtml = '';
-        if (!isCustomer && ms.paymentDate) {
-          const dateInfo = formatDate(ms.paymentDate);
-          paymentDateHtml = `
+            const list = card.querySelector('.milestones');
+            let cumulative = 0;
+            contract.milestones.forEach((ms, index) => {
+                cumulative += ms.percent;
+                const milestoneIcon = getMilestoneIcon(index + 1);
+
+                // Format payment date for vendors only
+                let paymentDateHtml = '';
+                if (!isCustomer && ms.paymentDate) {
+                    const dateInfo = formatDate(ms.paymentDate);
+                    paymentDateHtml = `
             <div class="payment-date ${dateInfo.class}">
               ${dateInfo.icon} ครบกำหนดจ่าย: ${dateInfo.formatted}
               ${dateInfo.daysLeft >= 0 ? `(อีก ${dateInfo.daysLeft} วัน)` : `(เลยกำหนด ${Math.abs(dateInfo.daysLeft)} วัน)`}
             </div>
           `;
-        }
-        
-        list.insertAdjacentHTML('beforeend', `
+                }        list.insertAdjacentHTML('beforeend', `
           <div class="milestone" style="border-left-color: ${borderColor};">
             <div class="head">
               <span>${milestoneIcon} งวดงาน ${ms.no} · ${ms.plan}</span>
               <span class="percent" style="background: ${bgGradient};">${ms.percent}%</span>
             </div>
-            ${ms.description ? `<p>📝 ${ms.description}</p>` : ''}
             <p class="amount">💵 มูลค่า : ${fmt(ms.amount)} บาท</p>
             ${paymentDateHtml}
+            
+            <!-- Status Indicators -->
+            <div style="display: flex; gap: 0.75rem; margin-top: 1rem; flex-wrap: wrap;">
+              <div style="
+                display: flex; 
+                align-items: center; 
+                gap: 0.5rem; 
+                padding: 0.5rem 0.75rem; 
+                background: ${getMilestoneStatusInfo(ms.status).bg}; 
+                border-radius: 8px;
+                border: 1px solid ${getMilestoneStatusInfo(ms.status).color}40;
+              ">
+                <span>${getMilestoneStatusInfo(ms.status).icon}</span>
+                <span style="font-size: 0.85rem; font-weight: 500; color: ${getMilestoneStatusInfo(ms.status).color};">
+                  ${getMilestoneStatusInfo(ms.status).text}
+                </span>
+              </div>
+              
+              <div style="
+                display: flex; 
+                align-items: center; 
+                gap: 0.5rem; 
+                padding: 0.5rem 0.75rem; 
+                background: ${getPaymentStatusInfo(ms.paymentStatus).bg}; 
+                border-radius: 8px;
+                border: 1px solid ${getPaymentStatusInfo(ms.paymentStatus).color}40;
+              ">
+                <span>${getPaymentStatusInfo(ms.paymentStatus).icon}</span>
+                <span style="font-size: 0.85rem; font-weight: 500; color: ${getPaymentStatusInfo(ms.paymentStatus).color};">
+                  ${getPaymentStatusInfo(ms.paymentStatus).text}
+                </span>
+              </div>
+            </div>
+            
+            ${renderDocumentTracking(ms)}
           </div>
         `);
-      });
+            });
 
-      /* Animate progress bar */
-      requestAnimationFrame(() => {
-        card.querySelector('.progress-bar-inner')
-            .style.width = Math.min(cumulative, 100) + '%';
-      });
+            /* Animate progress bar */
+            requestAnimationFrame(() => {
+                card.querySelector('.progress-bar-inner')
+                    .style.width = Math.min(cumulative, 100) + '%';
+            });
 
-      return card;
-    }
+            return card;
+        }        function getMilestoneIcon(number) {
+            const icons = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'];
+            return icons[number - 1] || '📍';
+        }
 
-    function getMilestoneIcon(number) {
-      const icons = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'];
-      return icons[number - 1] || '📍';
-    }
+        /* ---------  Date Formatting Helpers  --------- */
+        function formatDateDisplay(dateString) {
+            const date = new Date(dateString);
+            const thaiMonths = [
+                'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน',
+                'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'
+            ];
+            const thaiYear = date.getFullYear() + 543;
+            return `${thaiMonths[date.getMonth()]} ${thaiYear}`;
+        }
 
-    /* ---------  Summary Dashboard  --------- */
-    function buildSummaryDashboard(contracts) {
-      const grid = document.getElementById('summary-grid');
-      
-      // Separate customer (BRS) and vendors
-      const customer = contracts.find(c => c.name === 'BRS');
-      const vendors = contracts.filter(c => c.name !== 'BRS');
-      
-      const totalReceivable = customer ? customer.total : 0;
-      const totalPayable = vendors.reduce((sum, contract) => sum + contract.total, 0);
-      const netCashFlow = totalReceivable - totalPayable;
-      const profitMargin = totalReceivable > 0 ? ((netCashFlow / totalReceivable) * 100) : 0;
-      
-      grid.innerHTML = `
+        /* ---------  Payment Status Helper Functions  --------- */
+        function getPaymentStatusInfo(paymentStatus) {
+            const statusMap = {
+                'not_started': {
+                    color: '#718096',
+                    bg: 'rgba(113, 128, 150, 0.1)',
+                    icon: '⏸️',
+                    text: 'ยังไม่เริ่ม'
+                },
+                'waiting_for_documents': {
+                    color: '#f59e0b',
+                    bg: 'rgba(245, 158, 11, 0.1)',
+                    icon: '📋',
+                    text: 'รอเอกสาร'
+                },
+                'document_review': {
+                    color: '#3b82f6',
+                    bg: 'rgba(59, 130, 246, 0.1)',
+                    icon: '🔍',
+                    text: 'ตรวจสอบเอกสาร'
+                },
+                'approved': {
+                    color: '#10b981',
+                    bg: 'rgba(16, 185, 129, 0.1)',
+                    icon: '✅',
+                    text: 'อนุมัติแล้ว'
+                },
+                'paid': {
+                    color: '#059669',
+                    bg: 'rgba(5, 150, 105, 0.1)',
+                    icon: '💰',
+                    text: 'จ่ายแล้ว'
+                },
+                'overdue': {
+                    color: '#ef4444',
+                    bg: 'rgba(239, 68, 68, 0.1)',
+                    icon: '⚠️',
+                    text: 'เลยกำหนด'
+                }
+            };
+            return statusMap[paymentStatus] || statusMap['not_started'];
+        }
+
+        function getMilestoneStatusInfo(status) {
+            const statusMap = {
+                'pending': {
+                    color: '#f59e0b',
+                    bg: 'rgba(245, 158, 11, 0.1)',
+                    icon: '⏳',
+                    text: 'รอการดำเนินการ'
+                },
+                'in_progress': {
+                    color: '#3b82f6',
+                    bg: 'rgba(59, 130, 246, 0.1)',
+                    icon: '🔄',
+                    text: 'กำลังดำเนินการ'
+                },
+                'completed': {
+                    color: '#10b981',
+                    bg: 'rgba(16, 185, 129, 0.1)',
+                    icon: '✅',
+                    text: 'เสร็จสิ้น'
+                },
+                'cancelled': {
+                    color: '#ef4444',
+                    bg: 'rgba(239, 68, 68, 0.1)',
+                    icon: '❌',
+                    text: 'ยกเลิก'
+                }
+            };
+            return statusMap[status] || statusMap['pending'];
+        }
+
+        function renderDocumentTracking(milestone) {
+            const requiredCount = milestone.documentsRequired?.length || 0;
+            const receivedCount = milestone.documentsReceived?.length || 0;
+            const percentage = requiredCount > 0 ? (receivedCount / requiredCount) * 100 : 0;
+
+            return `
+        <div style="margin-top: 1rem; padding: 1rem; background: rgba(0,0,0,0.02); border-radius: 8px; border: 1px solid var(--border);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+            <span style="font-weight: 600; color: var(--text); font-size: 0.9rem;">📋 เอกสารที่ต้องการ</span>
+            <span style="
+              background: ${percentage === 100 ? 'var(--success-gradient)' : 'var(--danger-gradient)'}; 
+              color: white; 
+              padding: 0.25rem 0.75rem; 
+              border-radius: 12px; 
+              font-size: 0.8rem; 
+              font-weight: 600;
+            ">${receivedCount}/${requiredCount}</span>
+          </div>
+          
+          <!-- Progress Bar -->
+          <div style="width: 100%; height: 6px; background: var(--border); border-radius: 3px; margin-bottom: 0.75rem;">
+            <div style="
+              width: ${percentage}%; 
+              height: 100%; 
+              background: ${percentage === 100 ? 'var(--success-gradient)' : 'var(--primary)'}; 
+              border-radius: 3px; 
+              transition: width 0.3s ease;
+            "></div>
+          </div>
+          
+          <!-- Document List -->
+          <div style="display: grid; gap: 0.5rem;">
+            ${milestone.documentsRequired?.map(doc => {
+                const isReceived = milestone.documentsReceived?.includes(doc);
+                return `
+                <div style="
+                  display: flex; 
+                  align-items: center; 
+                  gap: 0.5rem; 
+                  padding: 0.5rem; 
+                  background: ${isReceived ? 'rgba(16, 185, 129, 0.05)' : 'rgba(239, 68, 68, 0.05)'}; 
+                  border-radius: 6px;
+                  border: 1px solid ${isReceived ? 'rgba(16, 185, 129, 0.2)' : 'rgba(239, 68, 68, 0.2)'};
+                ">
+                  <span style="color: ${isReceived ? '#10b981' : '#ef4444'}; font-size: 0.9rem;">
+                    ${isReceived ? '✅' : '📄'}
+                  </span>
+                  <span style="
+                    font-size: 0.85rem; 
+                    color: var(--text); 
+                    ${isReceived ? 'text-decoration: line-through; opacity: 0.7;' : ''}
+                  ">${doc}</span>
+                </div>
+              `;
+            }).join('') || '<div style="font-size: 0.85rem; color: var(--subtext); font-style: italic;">ไม่มีเอกสารที่ต้องการ</div>'}
+          </div>
+          
+          ${milestone.notes ? `
+            <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border);">
+              <div style="font-size: 0.85rem; color: var(--subtext); font-style: italic;">
+                💬 ${milestone.notes}
+              </div>
+            </div>
+          ` : ''}
+        </div>
+      `;
+        }        /* ---------  Summary Dashboard  --------- */        function buildSummaryDashboard(contracts) {
+            const grid = document.getElementById('summary-grid');
+
+            // Separate customer (BRS) and vendors
+            const customer = contracts.find(c => c.name === 'BRS');
+            const vendors = contracts.filter(c => c.name !== 'BRS');
+
+            const totalReceivable = customer ? customer.total : 0;
+            const totalPayable = vendors.reduce((sum, contract) => sum + contract.total, 0);
+            const netCashFlow = totalReceivable - totalPayable;
+            const profitMargin = totalReceivable > 0 ? ((netCashFlow / totalReceivable) * 100) : 0;
+
+            // Calculate status statistics
+            const allMilestones = [];
+            contracts.forEach(contract => {
+                contract.milestones.forEach(milestone => {
+                    allMilestones.push({
+                        ...milestone,
+                        contract: contract.name,
+                        isCustomer: contract.name === 'BRS'
+                    });
+                });
+            });
+
+            const totalMilestones = allMilestones.length;
+            const completedMilestones = allMilestones.filter(m => m.status === 'completed').length;
+            const inProgressMilestones = allMilestones.filter(m => m.status === 'in_progress').length;
+            const pendingMilestones = allMilestones.filter(m => m.status === 'pending').length;
+
+            const paidMilestones = allMilestones.filter(m => m.paymentStatus === 'paid').length;
+            const approvedMilestones = allMilestones.filter(m => m.paymentStatus === 'approved').length;
+            const waitingDocumentsMilestones = allMilestones.filter(m => m.paymentStatus === 'waiting_for_documents').length;            // Calculate document completion
+            const totalDocuments = allMilestones.reduce((sum, m) => sum + (m.documentsRequired?.length || 0), 0);
+            const receivedDocuments = allMilestones.reduce((sum, m) => sum + (m.documentsReceived?.length || 0), 0);
+            const documentCompletionRate = totalDocuments > 0 ? ((receivedDocuments / totalDocuments) * 100) : 100;
+
+            // Calculate average milestone completion rate (new statistic)
+            const avgMilestoneValue = totalMilestones > 0 ? (totalReceivable / totalMilestones) : 0;
+            const completedValue = completedMilestones * avgMilestoneValue;
+            const projectProgressRate = totalReceivable > 0 ? ((completedValue / totalReceivable) * 100) : 0;
+
+            grid.innerHTML = `
         <div class="summary-card" style="border-left: 4px solid var(--accent);">
           <div class="summary-number" style="color: var(--accent);">${fmt(totalReceivable)}</div>
           <div class="summary-label">รายรับจากลูกค้า (บาท)</div>
@@ -764,28 +1042,68 @@
           <div class="summary-label">อัตรากำไร</div>
           <div class="summary-detail">เปอร์เซ็นต์กำไรจากรายรับ</div>
         </div>
-        <div class="summary-card">
-          <div class="summary-number">1</div>
-          <div class="summary-label">ลูกค้า</div>
-          <div class="summary-detail">BRS (ผู้ว่าจ้าง)</div>
+        <div class="summary-card" style="border-left: 4px solid #10b981;">
+          <div class="summary-number" style="color: #10b981;">${completedMilestones}</div>
+          <div class="summary-label">งวดที่เสร็จสิ้น</div>
+          <div class="summary-detail">จากทั้งหมด ${totalMilestones} งวด</div>
         </div>
-        <div class="summary-card">
-          <div class="summary-number">${vendors.length}</div>
-          <div class="summary-label">ผู้รับเหมา</div>
-          <div class="summary-detail">บริษัทที่ต้องจ่ายเงิน</div>
+        <div class="summary-card" style="border-left: 4px solid #3b82f6;">
+          <div class="summary-number" style="color: #3b82f6;">${inProgressMilestones}</div>
+          <div class="summary-label">งวดที่กำลังดำเนินการ</div>
+          <div class="summary-detail">อยู่ระหว่างการทำงาน</div>
+        </div>
+        <div class="summary-card" style="border-left: 4px solid #059669;">
+          <div class="summary-number" style="color: #059669;">${paidMilestones}</div>
+          <div class="summary-label">งวดที่จ่ายแล้ว</div>
+          <div class="summary-detail">การชำระเงินเสร็จสิ้น</div>
+        </div>
+        <div class="summary-card" style="border-left: 4px solid #f59e0b;">
+          <div class="summary-number" style="color: #f59e0b;">${waitingDocumentsMilestones}</div>
+          <div class="summary-label">งวดที่รอเอกสาร</div>
+          <div class="summary-detail">รอการส่งเอกสาร</div>
+        </div>        <div class="summary-card" style="border-left: 4px solid #8b5cf6;">
+          <div class="summary-number" style="color: #8b5cf6;">${documentCompletionRate.toFixed(0)}%</div>
+          <div class="summary-label">ความครบถ้วนเอกสาร</div>
+          <div class="summary-detail">${receivedDocuments}/${totalDocuments} เอกสาร</div>
+        </div>
+        <div class="summary-card" style="border-left: 4px solid #06b6d4;">
+          <div class="summary-number" style="color: #06b6d4;">${projectProgressRate.toFixed(1)}%</div>
+          <div class="summary-label">ความคืบหน้าโครงการ</div>
+          <div class="summary-detail">ตามมูลค่างานที่เสร็จสิ้น</div>
         </div>
       `;
-    }
 
-    /* ---------  Chart Dashboard  --------- */
-    function buildChartDashboard(contracts) {
-      const chartContainer = document.getElementById('contract-chart').parentElement;
-      
-      // Separate customer and vendors
-      const customer = contracts.find(c => c.name === 'BRS');
-      const vendors = contracts.filter(c => c.name !== 'BRS');
-      
-      chartContainer.innerHTML = `
+            // Add cumulative cash flow footer
+            grid.insertAdjacentHTML('afterend', `
+        <div style="
+          background: linear-gradient(135deg, ${netCashFlow >= 0 ? 'var(--accent)' : '#ef4444'}, ${netCashFlow >= 0 ? '#059669' : '#dc2626'}); 
+          color: white; 
+          padding: 2rem; 
+          border-radius: 16px; 
+          text-align: center; 
+          margin-top: 2rem;
+          box-shadow: var(--shadow);
+        ">
+          <div style="font-size: 1rem; margin-bottom: 0.5rem; opacity: 0.9;">💼 กระแสเงินสะสม</div>
+          <div style="font-size: 2.2rem; font-weight: bold; margin-bottom: 0.5rem;">
+            ${netCashFlow >= 0 ? '📈' : '📉'} ${fmt(Math.abs(netCashFlow))} บาท
+          </div>
+          <div style="font-size: 0.9rem; opacity: 0.8;">
+            ${netCashFlow >= 0 ? 'เงินคงเหลือสุทธิ' : 'เงินขาดแคลนสุทธิ'} • อัตรากำไร ${profitMargin.toFixed(1)}%
+          </div>
+        </div>
+      `);
+        }
+
+        /* ---------  Chart Dashboard  --------- */
+        function buildChartDashboard(contracts) {
+            const chartContainer = document.getElementById('contract-chart').parentElement;
+
+            // Separate customer and vendors
+            const customer = contracts.find(c => c.name === 'BRS');
+            const vendors = contracts.filter(c => c.name !== 'BRS');
+
+            chartContainer.innerHTML = `
         <h2 style="margin-top: 0;">การเปรียบเทียบรายรับ - รายจ่าย</h2>
         
         <!-- Cash Flow Chart -->
@@ -809,95 +1127,123 @@
         <h3 style="color: var(--primary);">รายจ่ายแยกตามผู้รับเหมา</h3>
         <div class="chart" style="height: 200px;">
           ${vendors.map(vendor => {
-            const maxValue = Math.max(...vendors.map(v => v.total));
-            const height = (vendor.total / maxValue) * 150;
-            return `
+                const maxValue = Math.max(...vendors.map(v => v.total));
+                const height = (vendor.total / maxValue) * 150;
+                return `
               <div class="chart-bar" style="height: ${height}px; background: #ef4444;">
                 <div class="chart-bar-value">${fmt(vendor.total)}</div>
                 <div class="chart-bar-label">${vendor.name}</div>
               </div>
-            `;
-          }).join('')}
+            `;            }).join('')}
         </div>
       `;
-    }    /* ---------  Timeline Dashboard  --------- */
-    function buildTimelineDashboard(contracts) {
-      const container = document.getElementById('timeline-container');
       
-      // Collect all milestones with proper dates and status
-      const allMilestones = [];
-      contracts.forEach(contract => {
-        const isCustomer = contract.name === 'BRS';
-        contract.milestones.forEach(milestone => {
-          let sortDate;
-          let displayDate = milestone.plan;
-          let paymentDate = null;
-          
-          // Try to extract month/year for sorting
-          if (milestone.plan.includes('มิ.ย. 68')) {
-            sortDate = new Date('2025-06-30');
-            displayDate = 'มิถุนายน 2568';
-          } else if (milestone.plan.includes('ก.ค. 68')) {
-            sortDate = new Date('2025-07-31');
-            displayDate = 'กรกฎาคม 2568';
-          } else if (milestone.plan.includes('ส.ค. 68')) {
-            sortDate = new Date('2025-08-31');
-            displayDate = 'สิงหาคม 2568';
-          } else if (milestone.plan.includes('ก.ย. 68')) {
-            sortDate = new Date('2025-09-30');
-            displayDate = 'กันยายน 2568';
-          } else if (milestone.plan.includes('ธ.ค. 68')) {
-            sortDate = new Date('2025-12-31');
-            displayDate = 'ธันวาคม 2568';
-          } else if (milestone.plan.includes('หลังได้รับใบสั่งซื้อ')) {
-            sortDate = new Date('2025-06-01');
-            displayDate = 'เริ่มโครงการ (มิถุนายน 2568)';
-          } else {
-            sortDate = new Date('2025-06-15');
-            displayDate = milestone.plan;
-          }
-          
-          // Get payment date for vendors
-          if (!isCustomer && milestone.paymentDate) {
-            paymentDate = milestone.paymentDate;
-          }
-          
-          allMilestones.push({
-            contract: contract.name,
-            isCustomer: isCustomer,
-            sortDate: sortDate,
-            displayDate: displayDate,
-            paymentDate: paymentDate,
-            ...milestone,
-            contractTotal: contract.total
-          });
-        });
-      });
+            // Add cumulative cash flow footer to Chart Dashboard
+            const totalReceivableChart = customer ? customer.total : 0;
+            const totalPayableChart = vendors.reduce((sum, v) => sum + v.total, 0);
+            const netCashFlowChart = totalReceivableChart - totalPayableChart;
+            const profitMarginChart = totalReceivableChart > 0 ? ((netCashFlowChart / totalReceivableChart) * 100) : 0;
+            
+            chartContainer.insertAdjacentHTML('beforeend', `
+                <div style="
+                  background: linear-gradient(135deg, ${netCashFlowChart >= 0 ? 'var(--accent)' : '#ef4444'}, ${netCashFlowChart >= 0 ? '#059669' : '#dc2626'}); 
+                  color: white; 
+                  padding: 2rem; 
+                  border-radius: 16px; 
+                  text-align: center; 
+                  margin: 2rem 0 0;
+                  box-shadow: var(--shadow);
+                ">
+                  <div style="font-size: 1rem; margin-bottom: 0.5rem; opacity: 0.9;">💼 กระแสเงินสะสม</div>
+                  <div style="font-size: 2.2rem; font-weight: bold; margin-bottom: 0.5rem;">
+                    ${netCashFlowChart >= 0 ? '📈' : '📉'} ${fmt(Math.abs(netCashFlowChart))} บาท
+                  </div>
+                  <div style="font-size: 0.9rem; opacity: 0.8;">
+                    ${netCashFlowChart >= 0 ? 'เงินคงเหลือสุทธิ' : 'เงินขาดแคลนสุทธิ'} • อัตรากำไร ${profitMarginChart.toFixed(1)}%
+                  </div>
+                </div>
+            `);
+        }/* ---------  Timeline Dashboard  --------- */
+        function buildTimelineDashboard(contracts) {
+            const container = document.getElementById('timeline-container');            // Collect all milestones with proper dates and status
+            const allMilestones = [];
+            contracts.forEach(contract => {
+                const isCustomer = contract.name === 'BRS';
+                contract.milestones.forEach(milestone => {
+                    let sortDate;
+                    let displayDate = milestone.plan;
+                    let paymentDate = null;
 
-      // Sort by date
-      allMilestones.sort((a, b) => a.sortDate - b.sortDate);
+                    // Enhanced date handling - support both dueDate for customers and paymentDate for vendors
+                    if (isCustomer && milestone.dueDate) {
+                        sortDate = new Date(milestone.dueDate);
+                        displayDate = formatDateDisplay(milestone.dueDate);
+                    } else if (!isCustomer && milestone.paymentDate) {
+                        sortDate = new Date(milestone.paymentDate);
+                        displayDate = formatDateDisplay(milestone.paymentDate);
+                        paymentDate = milestone.paymentDate;
+                    } else {
+                        // Fallback to plan text parsing
+                        if (milestone.plan.includes('มิ.ย. 68')) {
+                            sortDate = new Date('2025-06-30');
+                            displayDate = 'มิถุนายน 2568';
+                        } else if (milestone.plan.includes('ก.ค. 68')) {
+                            sortDate = new Date('2025-07-31');
+                            displayDate = 'กรกฎาคม 2568';
+                        } else if (milestone.plan.includes('ส.ค. 68')) {
+                            sortDate = new Date('2025-08-31');
+                            displayDate = 'สิงหาคม 2568';
+                        } else if (milestone.plan.includes('ก.ย. 68')) {
+                            sortDate = new Date('2025-09-30');
+                            displayDate = 'กันยายน 2568';
+                        } else if (milestone.plan.includes('ธ.ค. 68')) {
+                            sortDate = new Date('2025-12-31');
+                            displayDate = 'ธันวาคม 2568';
+                        } else if (milestone.plan.includes('หลังได้รับใบสั่งซื้อ')) {
+                            sortDate = new Date('2025-06-01');
+                            displayDate = 'เริ่มโครงการ (มิถุนายน 2568)';
+                        } else {
+                            sortDate = new Date('2025-06-15');
+                            displayDate = milestone.plan;
+                        }
+                    }
 
-      // Group by month
-      const monthGroups = {};
-      allMilestones.forEach(milestone => {
-        const monthKey = milestone.displayDate;
-        if (!monthGroups[monthKey]) {
-          monthGroups[monthKey] = {
-            customer: [],
-            vendors: [],
-            totalReceivable: 0,
-            totalPayable: 0
-          };
-        }
-        
-        if (milestone.isCustomer) {
-          monthGroups[monthKey].customer.push(milestone);
-          monthGroups[monthKey].totalReceivable += milestone.amount;
-        } else {
-          monthGroups[monthKey].vendors.push(milestone);
-          monthGroups[monthKey].totalPayable += milestone.amount;
-        }
-      });
+                    allMilestones.push({
+                        contract: contract.name,
+                        isCustomer: isCustomer,
+                        sortDate: sortDate,
+                        displayDate: displayDate,
+                        paymentDate: paymentDate,
+                        ...milestone,
+                        contractTotal: contract.total
+                    });
+                });
+            });
+
+            // Sort by date
+            allMilestones.sort((a, b) => a.sortDate - b.sortDate);
+
+            // Group by month
+            const monthGroups = {};
+            allMilestones.forEach(milestone => {
+                const monthKey = milestone.displayDate;
+                if (!monthGroups[monthKey]) {
+                    monthGroups[monthKey] = {
+                        customer: [],
+                        vendors: [],
+                        totalReceivable: 0,
+                        totalPayable: 0
+                    };
+                }
+
+                if (milestone.isCustomer) {
+                    monthGroups[monthKey].customer.push(milestone);
+                    monthGroups[monthKey].totalReceivable += milestone.amount;
+                } else {
+                    monthGroups[monthKey].vendors.push(milestone);
+                    monthGroups[monthKey].totalPayable += milestone.amount;
+                }
+            });
 
             container.innerHTML = `
         <!-- Timeline Overview Header -->
@@ -905,16 +1251,16 @@
           <h2 style="margin: 0 0 1rem; font-size: 2rem; font-weight: 600;">⏱️ ไทม์ไลน์งวดการชำระเงิน</h2>
           <p style="margin: 0; opacity: 0.9; font-size: 1.1rem;">ติดตามงวดการชำระเงินตามแผนและกำหนดการชำระ</p>
         </div>
-      ` + 
-      
-      Object.keys(monthGroups).map((month, index) => {
-        const group = monthGroups[month];
-        const netFlow = group.totalReceivable - group.totalPayable;
-        const netColor = netFlow >= 0 ? 'var(--accent)' : '#ef4444';
-        const netIcon = netFlow >= 0 ? '📈' : '📉';
-        const netBg = netFlow >= 0 ? 'rgba(6, 214, 160, 0.1)' : 'rgba(239, 68, 68, 0.1)';
-        
-        return `
+      ` +
+
+                Object.keys(monthGroups).map((month, index) => {
+                    const group = monthGroups[month];
+                    const netFlow = group.totalReceivable - group.totalPayable;
+                    const netColor = netFlow >= 0 ? 'var(--accent)' : '#ef4444';
+                    const netIcon = netFlow >= 0 ? '📈' : '📉';
+                    const netBg = netFlow >= 0 ? 'rgba(6, 214, 160, 0.1)' : 'rgba(239, 68, 68, 0.1)';
+
+                    return `
           <div class="timeline-month" style="
             background: white; 
             border-radius: 20px; 
@@ -996,8 +1342,7 @@
                     </div>
                   </div>
                 </div>
-                
-                ${group.customer.length > 0 ? group.customer.map(milestone => `
+                  ${group.customer.length > 0 ? group.customer.map(milestone => `
                   <div style="
                     background: white; 
                     border-radius: 12px; 
@@ -1007,18 +1352,51 @@
                     border-left: 4px solid var(--accent);
                     transition: all 0.3s ease;
                   " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.06)'">
-                    <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 0.75rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.75rem;">
                       <div style="flex: 1;">
                         <div style="font-weight: 600; color: var(--text); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
                           ${getMilestoneIcon(milestone.no)} 
                           <span>งวดงาน ${milestone.no}</span>
-                          <span style="background: var(--accent); color: white; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">${milestone.percent}%</span>
+                          <span style="background: var(--accent); color: white; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">${milestone.percent}%</span>                        </div>
+                      </div>
+                      <!-- Status Badges -->
+                      <div style="display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end;">
+                        <!-- Milestone Status Badge -->
+                        <div style="
+                          background: ${getMilestoneStatusInfo(milestone.status).bg}; 
+                          color: ${getMilestoneStatusInfo(milestone.status).color}; 
+                          padding: 0.25rem 0.75rem; 
+                          border-radius: 12px; 
+                          font-size: 0.8rem; 
+                          font-weight: 600;
+                          border: 1px solid ${getMilestoneStatusInfo(milestone.status).color}40;
+                          display: flex;
+                          align-items: center;
+                          gap: 0.25rem;
+                        ">
+                          <span>${getMilestoneStatusInfo(milestone.status).icon}</span>
+                          <span>${getMilestoneStatusInfo(milestone.status).text}</span>
                         </div>
-                        ${milestone.description ? `<div style="font-size: 0.9rem; color: var(--subtext); margin-bottom: 0.75rem; line-height: 1.4;">${milestone.description}</div>` : ''}
+                        <!-- Payment Status Badge -->
+                        <div style="
+                          background: ${getPaymentStatusInfo(milestone.paymentStatus).bg}; 
+                          color: ${getPaymentStatusInfo(milestone.paymentStatus).color}; 
+                          padding: 0.25rem 0.75rem; 
+                          border-radius: 12px; 
+                          font-size: 0.8rem; 
+                          font-weight: 600;
+                          border: 1px solid ${getPaymentStatusInfo(milestone.paymentStatus).color}40;
+                          display: flex;
+                          align-items: center;
+                          gap: 0.25rem;
+                        ">
+                          <span>${getPaymentStatusInfo(milestone.paymentStatus).icon}</span>
+                          <span>${getPaymentStatusInfo(milestone.paymentStatus).text}</span>
+                        </div>
                       </div>
                     </div>
                     
-                    <div style="display: flex; justify-content: between; align-items: center;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: ${milestone.documentsRequired?.length > 0 || milestone.notes ? '1rem' : '0'};">
                       <div style="font-weight: 700; color: var(--accent); font-size: 1.1rem;">
                         + ${fmt(milestone.amount)} บาท
                       </div>
@@ -1026,6 +1404,18 @@
                         ✅ รายรับ
                       </div>
                     </div>
+                    
+                    <!-- Document Tracking -->
+                    ${milestone.documentsRequired?.length > 0 ? renderDocumentTracking(milestone) : ''}
+                    
+                    <!-- Notes -->
+                    ${milestone.notes ? `
+                      <div style="margin-top: 1rem; padding: 0.75rem; background: rgba(0,0,0,0.02); border-radius: 8px; border-left: 3px solid var(--accent);">
+                        <div style="font-size: 0.85rem; color: var(--subtext); font-style: italic;">
+                          💬 ${milestone.notes}
+                        </div>
+                      </div>
+                    ` : ''}
                   </div>
                 `).join('') : `
                   <div style="
@@ -1065,21 +1455,20 @@
                     </div>
                   </div>
                 </div>
-                
-                ${group.vendors.length > 0 ? group.vendors.map(milestone => {
-                  let paymentInfo = '';
-                  let paymentBadge = '';
-                  if (milestone.paymentDate) {
-                    const dateInfo = formatDate(milestone.paymentDate);
-                    const badgeColors = {
-                      'overdue': { bg: '#fee2e2', color: '#dc2626', border: '#fca5a5' },
-                      'urgent': { bg: '#fef3c7', color: '#d97706', border: '#fcd34d' },
-                      'soon': { bg: '#dbeafe', color: '#2563eb', border: '#93c5fd' },
-                      'normal': { bg: '#dcfce7', color: '#059669', border: '#86efac' }
-                    };
-                    const colors = badgeColors[dateInfo.class];
-                    
-                    paymentInfo = `
+                  ${group.vendors.length > 0 ? group.vendors.map(milestone => {
+                        let paymentInfo = '';
+                        let paymentBadge = '';
+                        if (milestone.paymentDate) {
+                            const dateInfo = formatDate(milestone.paymentDate);
+                            const badgeColors = {
+                                'overdue': { bg: '#fee2e2', color: '#dc2626', border: '#fca5a5' },
+                                'urgent': { bg: '#fef3c7', color: '#d97706', border: '#fcd34d' },
+                                'soon': { bg: '#dbeafe', color: '#2563eb', border: '#93c5fd' },
+                                'normal': { bg: '#dcfce7', color: '#059669', border: '#86efac' }
+                            };
+                            const colors = badgeColors[dateInfo.class];
+
+                            paymentInfo = `
                       <div style="
                         background: ${colors.bg}; 
                         color: ${colors.color}; 
@@ -1096,23 +1485,23 @@
                         <span style="font-size: 1rem;">${dateInfo.icon}</span>
                         <div>
                           <div>ครบกำหนด: ${dateInfo.formatted}</div>
-                          ${dateInfo.daysLeft < 0 ? 
-                            `<div style="font-size: 0.75rem; margin-top: 0.2rem;">เลยกำหนด ${Math.abs(dateInfo.daysLeft)} วัน</div>` :
-                            dateInfo.daysLeft <= 7 ? 
-                            `<div style="font-size: 0.75rem; margin-top: 0.2rem;">เหลือ ${dateInfo.daysLeft} วัน</div>` : ''
-                          }
+                          ${dateInfo.daysLeft < 0 ?
+                                    `<div style="font-size: 0.75rem; margin-top: 0.2rem;">เลยกำหนด ${Math.abs(dateInfo.daysLeft)} วัน</div>` :
+                                    dateInfo.daysLeft <= 7 ?
+                                        `<div style="font-size: 0.75rem; margin-top: 0.2rem;">เหลือ ${dateInfo.daysLeft} วัน</div>` : ''
+                                }
                         </div>
                       </div>
                     `;
-                    
-                    paymentBadge = `
+
+                            paymentBadge = `
                       <div style="background: ${colors.bg}; color: ${colors.color}; padding: 0.3rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: 1px solid ${colors.border};">
                         ${dateInfo.icon} ${dateInfo.daysLeft < 0 ? 'เลยกำหนด' : dateInfo.daysLeft <= 7 ? 'ด่วน' : 'ปกติ'}
                       </div>
                     `;
-                  }
-                  
-                  return `
+                        }
+
+                        return `
                     <div style="
                       background: white; 
                       border-radius: 12px; 
@@ -1122,7 +1511,7 @@
                       border-left: 4px solid #ef4444;
                       transition: all 0.3s ease;
                     " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.06)'">
-                      <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 0.75rem;">
+                      <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.75rem;">
                         <div style="flex: 1;">
                           <div style="font-weight: 600; color: var(--text); margin-bottom: 0.25rem;">
                             ${getMilestoneIcon(milestone.no)} ${milestone.contract}
@@ -1130,12 +1519,46 @@
                           <div style="font-size: 0.9rem; color: var(--subtext); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
                             <span>งวดงาน ${milestone.no}</span>
                             <span style="background: #ef4444; color: white; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">${milestone.percent}%</span>
+                            ${milestone.termPayment ? `<span style="background: #3b82f6; color: white; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Term Payment</span>` : ''}                          </div>
+                        </div>
+                        <!-- Status Badges -->
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end;">
+                          <!-- Milestone Status Badge -->
+                          <div style="
+                            background: ${getMilestoneStatusInfo(milestone.status).bg}; 
+                            color: ${getMilestoneStatusInfo(milestone.status).color}; 
+                            padding: 0.25rem 0.75rem; 
+                            border-radius: 12px; 
+                            font-size: 0.8rem; 
+                            font-weight: 600;
+                            border: 1px solid ${getMilestoneStatusInfo(milestone.status).color}40;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.25rem;
+                          ">
+                            <span>${getMilestoneStatusInfo(milestone.status).icon}</span>
+                            <span>${getMilestoneStatusInfo(milestone.status).text}</span>
                           </div>
-                          ${milestone.description ? `<div style="font-size: 0.85rem; color: var(--subtext); margin-bottom: 0.75rem; line-height: 1.4;">${milestone.description}</div>` : ''}
+                          <!-- Payment Status Badge -->
+                          <div style="
+                            background: ${getPaymentStatusInfo(milestone.paymentStatus).bg}; 
+                            color: ${getPaymentStatusInfo(milestone.paymentStatus).color}; 
+                            padding: 0.25rem 0.75rem; 
+                            border-radius: 12px; 
+                            font-size: 0.8rem; 
+                            font-weight: 600;
+                            border: 1px solid ${getPaymentStatusInfo(milestone.paymentStatus).color}40;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.25rem;
+                          ">
+                            <span>${getPaymentStatusInfo(milestone.paymentStatus).icon}</span>
+                            <span>${getPaymentStatusInfo(milestone.paymentStatus).text}</span>
+                          </div>
                         </div>
                       </div>
                       
-                      <div style="display: flex; justify-content: between; align-items: center; margin-bottom: ${paymentInfo ? '0' : '0'};">
+                      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: ${milestone.documentsRequired?.length > 0 || milestone.notes || paymentInfo ? '1rem' : '0'};">
                         <div style="font-weight: 700; color: #ef4444; font-size: 1.1rem;">
                           - ${fmt(milestone.amount)} บาท
                         </div>
@@ -1146,10 +1569,23 @@
                           </div>
                         </div>
                       </div>
+                      
+                      <!-- Document Tracking -->
+                      ${milestone.documentsRequired?.length > 0 ? renderDocumentTracking(milestone) : ''}
+                      
+                      <!-- Notes -->
+                      ${milestone.notes ? `
+                        <div style="margin-top: 1rem; padding: 0.75rem; background: rgba(0,0,0,0.02); border-radius: 8px; border-left: 3px solid #ef4444;">
+                          <div style="font-size: 0.85rem; color: var(--subtext); font-style: italic;">
+                            💬 ${milestone.notes}
+                          </div>
+                        </div>
+                      ` : ''}
+                      
                       ${paymentInfo}
                     </div>
                   `;
-                }).join('') : `
+                    }).join('') : `
                   <div style="
                     text-align: center; 
                     padding: 2rem; 
@@ -1164,102 +1600,131 @@
                   </div>
                 `}
               </div>
-            </div>
-          </div>
+            </div>          </div>
         `;
-      }).join('');
-    }    /* ---------  Cash Flow Dashboard  --------- */
-    function buildCashFlowDashboard(contracts) {
-      const container = document.getElementById('cashflow-container');
-      
-      const customer = contracts.find(c => c.name === 'BRS');
-      const vendors = contracts.filter(c => c.name !== 'BRS');
-      
-      // Create monthly cash flow data with proper dates
-      const monthlyFlow = {};
-      const months = [
-        { key: '2025-06', name: 'มิถุนายน 2568', short: 'มิ.ย.' },
-        { key: '2025-07', name: 'กรกฎาคม 2568', short: 'ก.ค.' },
-        { key: '2025-08', name: 'สิงหาคม 2568', short: 'ส.ค.' },
-        { key: '2025-09', name: 'กันยายน 2568', short: 'ก.ย.' },
-        { key: '2025-10', name: 'ตุลาคม 2568', short: 'ต.ค.' },
-        { key: '2025-11', name: 'พฤศจิกายน 2568', short: 'พ.ย.' },
-        { key: '2025-12', name: 'ธันวาคม 2568', short: 'ธ.ค.' }
-      ];
-      
-      // Initialize months
-      months.forEach(month => {
-        monthlyFlow[month.key] = {
-          name: month.name,
-          receivable: 0,
-          payable: 0,
-          net: 0,
-          receivableItems: [],
-          payableItems: []
-        };
-      });
-      
-      // Map customer receivables
-      if (customer) {
-        customer.milestones.forEach(milestone => {
-          let monthKey = '2025-06'; // default
-          
-          if (milestone.plan.includes('ก.ค. 68')) monthKey = '2025-07';
-          else if (milestone.plan.includes('ส.ค. 68')) monthKey = '2025-08';
-          else if (milestone.plan.includes('ก.ย. 68')) monthKey = '2025-09';
-          else if (milestone.plan.includes('ต.ค. 68')) monthKey = '2025-10';
-          else if (milestone.plan.includes('พ.ย. 68')) monthKey = '2025-11';
-          else if (milestone.plan.includes('ธ.ค. 68')) monthKey = '2025-12';
-          
-          if (monthlyFlow[monthKey]) {
-            monthlyFlow[monthKey].receivable += milestone.amount;
-            monthlyFlow[monthKey].receivableItems.push(milestone);
-          }
-        });
-      }
-      
-      // Map vendor payables by payment date
-      vendors.forEach(vendor => {
-        vendor.milestones.forEach(milestone => {
-          let monthKey = '2025-06'; // default
-          
-          if (milestone.paymentDate) {
-            const date = new Date(milestone.paymentDate);
-            monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
-          } else if (milestone.plan.includes('ก.ค. 68')) {
-            monthKey = '2025-07';
-          } else if (milestone.plan.includes('ส.ค. 68')) {
-            monthKey = '2025-08';
-          } else if (milestone.plan.includes('ก.ย. 68')) {
-            monthKey = '2025-09';
-          } else if (milestone.plan.includes('ธ.ค. 68')) {
-            monthKey = '2025-12';
-          }
-          
-          if (monthlyFlow[monthKey]) {
-            monthlyFlow[monthKey].payable += milestone.amount;
-            monthlyFlow[monthKey].payableItems.push({
-              ...milestone,
-              vendor: vendor.name
+                }).join('');
+                
+            // Add cumulative cash flow footer to Timeline Dashboard
+            const customerTimeline = contracts.find(c => c.name === 'BRS');
+            const vendorsTimeline = contracts.filter(c => c.name !== 'BRS');
+            const totalReceivableTimeline = customerTimeline ? customerTimeline.total : 0;
+            const totalPayableTimeline = vendorsTimeline.reduce((sum, v) => sum + v.total, 0);
+            const netCashFlowTimeline = totalReceivableTimeline - totalPayableTimeline;
+            const profitMarginTimeline = totalReceivableTimeline > 0 ? ((netCashFlowTimeline / totalReceivableTimeline) * 100) : 0;
+            
+            container.innerHTML += `
+                <div style="
+                  background: linear-gradient(135deg, ${netCashFlowTimeline >= 0 ? 'var(--accent)' : '#ef4444'}, ${netCashFlowTimeline >= 0 ? '#059669' : '#dc2626'}); 
+                  color: white; 
+                  padding: 2rem; 
+                  border-radius: 16px; 
+                  text-align: center; 
+                  margin-top: 2rem;
+                  box-shadow: var(--shadow);
+                ">
+                  <div style="font-size: 1rem; margin-bottom: 0.5rem; opacity: 0.9;">💼 กระแสเงินสะสม</div>
+                  <div style="font-size: 2.2rem; font-weight: bold; margin-bottom: 0.5rem;">
+                    ${netCashFlowTimeline >= 0 ? '📈' : '📉'} ${fmt(Math.abs(netCashFlowTimeline))} บาท
+                  </div>
+                  <div style="font-size: 0.9rem; opacity: 0.8;">
+                    ${netCashFlowTimeline >= 0 ? 'เงินคงเหลือสุทธิ' : 'เงินขาดแคลนสุทธิ'} • อัตรากำไร ${profitMarginTimeline.toFixed(1)}%
+                  </div>
+                </div>
+            `;
+        }/* ---------  Cash Flow Dashboard  --------- */
+        function buildCashFlowDashboard(contracts) {
+            const container = document.getElementById('cashflow-container');
+
+            const customer = contracts.find(c => c.name === 'BRS');
+            const vendors = contracts.filter(c => c.name !== 'BRS');
+
+            // Create monthly cash flow data with proper dates
+            const monthlyFlow = {};
+            const months = [
+                { key: '2025-06', name: 'มิถุนายน 2568', short: 'มิ.ย.' },
+                { key: '2025-07', name: 'กรกฎาคม 2568', short: 'ก.ค.' },
+                { key: '2025-08', name: 'สิงหาคม 2568', short: 'ส.ค.' },
+                { key: '2025-09', name: 'กันยายน 2568', short: 'ก.ย.' },
+                { key: '2025-10', name: 'ตุลาคม 2568', short: 'ต.ค.' },
+                { key: '2025-11', name: 'พฤศจิกายน 2568', short: 'พ.ย.' },
+                { key: '2025-12', name: 'ธันวาคม 2568', short: 'ธ.ค.' }
+            ];
+
+            // Initialize months
+            months.forEach(month => {
+                monthlyFlow[month.key] = {
+                    name: month.name,
+                    receivable: 0,
+                    payable: 0,
+                    net: 0,
+                    receivableItems: [],
+                    payableItems: []
+                };
+            });            // Map customer receivables - enhanced with proper date handling
+            if (customer) {
+                customer.milestones.forEach(milestone => {
+                    let monthKey = '2025-06'; // default
+
+                    // Use dueDate if available, otherwise fall back to plan text
+                    if (milestone.dueDate) {
+                        const date = new Date(milestone.dueDate);
+                        monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+                    } else if (milestone.plan.includes('ก.ค. 68')) monthKey = '2025-07';
+                    else if (milestone.plan.includes('ส.ค. 68')) monthKey = '2025-08';
+                    else if (milestone.plan.includes('ก.ย. 68')) monthKey = '2025-09';
+                    else if (milestone.plan.includes('ต.ค. 68')) monthKey = '2025-10';
+                    else if (milestone.plan.includes('พ.ย. 68')) monthKey = '2025-11';
+                    else if (milestone.plan.includes('ธ.ค. 68')) monthKey = '2025-12';
+
+                    if (monthlyFlow[monthKey]) {
+                        monthlyFlow[monthKey].receivable += milestone.amount;
+                        monthlyFlow[monthKey].receivableItems.push(milestone);
+                    }
+                });
+            }
+
+            // Map vendor payables by payment date
+            vendors.forEach(vendor => {
+                vendor.milestones.forEach(milestone => {
+                    let monthKey = '2025-06'; // default
+
+                    if (milestone.paymentDate) {
+                        const date = new Date(milestone.paymentDate);
+                        monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+                    } else if (milestone.plan.includes('ก.ค. 68')) {
+                        monthKey = '2025-07';
+                    } else if (milestone.plan.includes('ส.ค. 68')) {
+                        monthKey = '2025-08';
+                    } else if (milestone.plan.includes('ก.ย. 68')) {
+                        monthKey = '2025-09';
+                    } else if (milestone.plan.includes('ธ.ค. 68')) {
+                        monthKey = '2025-12';
+                    }
+
+                    if (monthlyFlow[monthKey]) {
+                        monthlyFlow[monthKey].payable += milestone.amount;
+                        monthlyFlow[monthKey].payableItems.push({
+                            ...milestone,
+                            vendor: vendor.name
+                        });
+                    }
+                });
             });
-          }
-        });
-      });
-      
-      // Calculate net flow and cumulative
-      let cumulativeFlow = 0;
-      months.forEach(month => {
-        if (monthlyFlow[month.key]) {
-          monthlyFlow[month.key].net = monthlyFlow[month.key].receivable - monthlyFlow[month.key].payable;
-          cumulativeFlow += monthlyFlow[month.key].net;
-          monthlyFlow[month.key].cumulative = cumulativeFlow;
-        }
-      });
-      
-      const totalReceivable = customer ? customer.total : 0;
-      const totalPayable = vendors.reduce((sum, v) => sum + v.total, 0);
-      const totalProfit = totalReceivable - totalPayable;
-        container.innerHTML = `
+
+            // Calculate net flow and cumulative
+            let cumulativeFlow = 0;
+            months.forEach(month => {
+                if (monthlyFlow[month.key]) {
+                    monthlyFlow[month.key].net = monthlyFlow[month.key].receivable - monthlyFlow[month.key].payable;
+                    cumulativeFlow += monthlyFlow[month.key].net;
+                    monthlyFlow[month.key].cumulative = cumulativeFlow;
+                }
+            });
+
+            const totalReceivable = customer ? customer.total : 0;
+            const totalPayable = vendors.reduce((sum, v) => sum + v.total, 0);
+            const totalProfit = totalReceivable - totalPayable;
+            container.innerHTML = `
         <!-- Enhanced Summary Cards with Better Visual Hierarchy -->
         <div style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 2rem; border-radius: 16px; margin-bottom: 3rem; text-align: center; box-shadow: var(--shadow-hover);">
           <h2 style="margin: 0 0 1rem; font-size: 2rem; font-weight: 600;">📊 กระแสเงินสดโครงการ</h2>
@@ -1329,26 +1794,33 @@
             </div>
           </div>
         </div>
-        
-        <!-- Enhanced Monthly Cash Flow Chart -->
-        <div style="background: white; border-radius: 20px; padding: 2.5rem; margin-bottom: 3rem; box-shadow: var(--shadow);">
+          <!-- Enhanced Monthly Cash Flow Chart -->
+        <div style="background: white; border-radius: 20px; padding: 1.5rem; margin-bottom: 3rem; box-shadow: var(--shadow);">
           <div style="text-align: center; margin-bottom: 2rem;">
             <h3 style="margin: 0 0 0.5rem; color: var(--primary); font-size: 1.8rem; font-weight: 600;">📊 กระแสเงินสดรายเดือน</h3>
             <p style="margin: 0; color: var(--subtext); font-size: 1rem;">เปรียบเทียบรายรับและรายจ่ายในแต่ละเดือน</p>
           </div>
           
-          <!-- Enhanced Visual Chart -->
+          <!-- Enhanced Visual Chart with Better Mobile Support -->
           <div style="
             background: linear-gradient(135deg, #f8fafc, #e2e8f0); 
             border-radius: 16px; 
-            padding: 2.5rem; 
+            padding: 1.5rem; 
             margin-bottom: 2.5rem; 
             overflow-x: auto;
             border: 1px solid var(--border);
           ">
-            <div style="display: flex; align-items: end; height: 250px; gap: 1.5rem; min-width: 700px; position: relative;">
+            <div style="
+              display: flex; 
+              align-items: end; 
+              height: 340px; 
+              gap: 1rem; 
+              min-width: 800px; 
+              position: relative;
+              padding: 0 1rem;
+            ">
               <!-- Grid Lines -->
-              <div style="position: absolute; top: 0; left: 0; right: 0; height: 100%; pointer-events: none;">
+              <div style="position: absolute; top: 0; left: 0; right: 0; height: 100%; pointer-events: none; z-index: 1;">
                 ${[0, 1, 2, 3, 4].map(i => `
                   <div style="position: absolute; top: ${i * 20}%; left: 0; right: 0; height: 1px; background: rgba(0,0,0,0.05);"></div>
                 `).join('')}
@@ -1356,76 +1828,133 @@
               
               ${months.map(month => {
                 const data = monthlyFlow[month.key];
-                if (!data || (data.receivable === 0 && data.payable === 0)) return '';
-                
-                const maxValue = Math.max(...months.map(m => Math.max(monthlyFlow[m.key]?.receivable || 0, monthlyFlow[m.key]?.payable || 0)));
-                const receivableHeight = maxValue > 0 ? (data.receivable / maxValue) * 200 : 0;
-                const payableHeight = maxValue > 0 ? (data.payable / maxValue) * 200 : 0;
+                const hasData = data && (data.receivable > 0 || data.payable > 0);
+                  if (!hasData) {
+                  return `
+                    <div style="flex: 1; min-width: 120px; text-align: center; position: relative; z-index: 2;">
+                      <!-- Empty month placeholder -->
+                      <div style="display: flex; align-items: end; gap: 12px; height: 230px; margin-bottom: 1.5rem; justify-content: center;">
+                        <div style="width: 40px; height: 20px; background: #f1f5f9; border-radius: 4px; opacity: 0.5;"></div>
+                        <div style="width: 40px; height: 20px; background: #f1f5f9; border-radius: 4px; opacity: 0.5;"></div>
+                        <div style="width: 32px; height: 20px; background: #f1f5f9; border-radius: 4px; opacity: 0.5;"></div>
+                      </div>
+                      <div style="font-size: 0.9rem; font-weight: 600; color: var(--subtext); background: white; padding: 0.4rem 0.6rem; border-radius: 8px; margin-bottom: 0.5rem;">
+                        ${month.short}
+                      </div>
+                      <div style="font-size: 0.75rem; color: var(--subtext); opacity: 0.7;">ไม่มีข้อมูล</div>
+                    </div>
+                  `;
+                }                // Fix chart calculation to properly handle first month data
+                const allValues = [];
+                months.forEach(m => {
+                  if (monthlyFlow[m.key]) {
+                    if (monthlyFlow[m.key].receivable > 0) allValues.push(monthlyFlow[m.key].receivable);
+                    if (monthlyFlow[m.key].payable > 0) allValues.push(monthlyFlow[m.key].payable);
+                  }
+                });
+                const maxValue = allValues.length > 0 ? Math.max(...allValues) : 0;
+                const receivableHeight = maxValue > 0 ? Math.max((data.receivable / maxValue) * 220, data.receivable > 0 ? 35 : 0) : 0;
+                const payableHeight = maxValue > 0 ? Math.max((data.payable / maxValue) * 220, data.payable > 0 ? 35 : 0) : 0;
                 const netColor = data.net >= 0 ? 'var(--accent)' : '#ef4444';
-                
+
                 return `
-                  <div style="flex: 1; min-width: 90px; text-align: center; position: relative;">
-                    <!-- Chart Bars -->
-                    <div style="display: flex; align-items: end; gap: 6px; height: 200px; margin-bottom: 1.5rem; justify-content: center; position: relative;">
+                  <div style="flex: 1; min-width: 120px; text-align: center; position: relative; z-index: 2;">
+                    <!-- Chart Bars with Enhanced Visibility for Single Data -->
+                    <div style="display: flex; align-items: end; gap: 12px; height: 230px; margin-bottom: 1.5rem; justify-content: center; position: relative;">
                       <!-- Receivable Bar -->
                       <div style="
-                        width: 28px; 
+                        width: 40px;
                         background: linear-gradient(to top, var(--accent), #34d399); 
                         height: ${receivableHeight}px; 
                         border-radius: 6px 6px 0 0; 
                         position: relative;
                         box-shadow: 0 4px 12px rgba(6, 214, 160, 0.3);
                         transition: all 0.3s ease;
+                        ${data.receivable === 0 ? 'opacity: 0.3;' : ''}
+                        border: 2px solid white;
                       " 
-                      title="รายรับ: ${fmt(data.receivable)}"
-                      onmouseover="this.style.transform='scale(1.05)'"
-                      onmouseout="this.style.transform='scale(1)'">
-                        ${receivableHeight > 40 ? `
+                      title="รายรับ: ${fmt(data.receivable)} บาท"
+                      onmouseover="this.style.transform='scale(1.05)'; this.style.zIndex='10';"
+                      onmouseout="this.style.transform='scale(1)'; this.style.zIndex='1';">
+                        ${receivableHeight > 50 ? `
                           <div style="
                             position: absolute; 
-                            top: -25px; 
+                            top: -30px; 
                             left: 50%; 
                             transform: translateX(-50%); 
                             font-size: 0.7rem; 
                             font-weight: bold; 
                             color: var(--accent);
                             background: white;
-                            padding: 0.2rem 0.5rem;
-                            border-radius: 4px;
-                            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                            padding: 0.3rem 0.6rem;
+                            border-radius: 6px;
+                            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
                             white-space: nowrap;
-                          ">+${(data.receivable/1000000).toFixed(1)}M</div>
+                            border: 1px solid var(--accent);
+                          ">+${(data.receivable / 1000000).toFixed(1)}M</div>
+                        ` : data.receivable > 0 ? `
+                          <div style="
+                            position: absolute; 
+                            top: -25px; 
+                            left: 50%; 
+                            transform: translateX(-50%); 
+                            font-size: 0.6rem; 
+                            font-weight: bold; 
+                            color: var(--accent);
+                            background: white;
+                            padding: 0.2rem 0.4rem;
+                            border-radius: 4px;
+                            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+                            white-space: nowrap;
+                          ">${(data.receivable / 1000000).toFixed(1)}M</div>
                         ` : ''}
-                      </div>
-                      
+                      </div>                      
                       <!-- Payable Bar -->
                       <div style="
-                        width: 28px; 
+                        width: 40px;
                         background: linear-gradient(to top, #ef4444, #f87171); 
                         height: ${payableHeight}px; 
                         border-radius: 6px 6px 0 0; 
                         position: relative;
                         box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
                         transition: all 0.3s ease;
+                        ${data.payable === 0 ? 'opacity: 0.3;' : ''}
+                        border: 2px solid white;
                       " 
-                      title="รายจ่าย: ${fmt(data.payable)}"
-                      onmouseover="this.style.transform='scale(1.05)'"
-                      onmouseout="this.style.transform='scale(1)'">
-                        ${payableHeight > 40 ? `
+                      title="รายจ่าย: ${fmt(data.payable)} บาท"
+                      onmouseover="this.style.transform='scale(1.05)'; this.style.zIndex='10';"
+                      onmouseout="this.style.transform='scale(1)'; this.style.zIndex='1';">
+                        ${payableHeight > 50 ? `
                           <div style="
                             position: absolute; 
-                            top: -25px; 
+                            top: -30px; 
                             left: 50%; 
                             transform: translateX(-50%); 
                             font-size: 0.7rem; 
                             font-weight: bold; 
                             color: #ef4444;
                             background: white;
-                            padding: 0.2rem 0.5rem;
-                            border-radius: 4px;
-                            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                            padding: 0.3rem 0.6rem;
+                            border-radius: 6px;
+                            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
                             white-space: nowrap;
-                          ">-${(data.payable/1000000).toFixed(1)}M</div>
+                            border: 1px solid #ef4444;
+                          ">-${(data.payable / 1000000).toFixed(1)}M</div>
+                        ` : data.payable > 0 ? `
+                          <div style="
+                            position: absolute; 
+                            top: -25px; 
+                            left: 50%; 
+                            transform: translateX(-50%); 
+                            font-size: 0.6rem; 
+                            font-weight: bold; 
+                            color: #ef4444;
+                            background: white;
+                            padding: 0.2rem 0.4rem;
+                            border-radius: 4px;
+                            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+                            white-space: nowrap;
+                          ">${(data.payable / 1000000).toFixed(1)}M</div>
                         ` : ''}
                       </div>
                     </div>
@@ -1437,7 +1966,7 @@
                       color: var(--text); 
                       margin-bottom: 0.5rem;
                       background: white;
-                      padding: 0.4rem 0.8rem;
+                      padding: 0.4rem 0.6rem;
                       border-radius: 8px;
                       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
                     ">${month.short}</div>
@@ -1448,28 +1977,29 @@
                       color: ${netColor}; 
                       font-weight: 700;
                       background: ${netColor}15;
-                      padding: 0.3rem 0.6rem;
+                      padding: 0.3rem 0.5rem;
                       border-radius: 6px;
                       border: 1px solid ${netColor}40;
                     ">
-                      ${data.net >= 0 ? '+' : ''}${(data.net/1000000).toFixed(1)}M
+                      ${data.net >= 0 ? '+' : ''}${(data.net / 1000000).toFixed(1)}M
                     </div>
                   </div>
                 `;
-              }).join('')}
+            }).join('')}
             </div>
             
             <!-- Enhanced Legend -->
             <div style="
               display: flex; 
               justify-content: center; 
-              gap: 3rem; 
+              gap: 2rem; 
               margin-top: 2rem; 
-              font-size: 1rem;
+              font-size: 0.95rem;
               background: white;
-              padding: 1rem 2rem;
+              padding: 1rem 1.5rem;
               border-radius: 12px;
               box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+              flex-wrap: wrap;
             ">
               <div style="display: flex; align-items: center; gap: 0.75rem;">
                 <div style="width: 20px; height: 20px; background: linear-gradient(135deg, var(--accent), #34d399); border-radius: 6px; box-shadow: 0 2px 4px rgba(6, 214, 160, 0.3);"></div>
@@ -1481,18 +2011,25 @@
               </div>
             </div>
           </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="width: 20px; height: 20px; background: linear-gradient(135deg, #ef4444, #f87171); border-radius: 6px; box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);"></div>
+                <span style="font-weight: 600; color: var(--text);">💸 รายจ่าย</span>
+              </div>
+            </div>
+          </div>
           
           <!-- Enhanced Monthly Details Grid -->
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 2rem;">
             ${months.map(month => {
-              const data = monthlyFlow[month.key];
-              if (!data || (data.receivable === 0 && data.payable === 0)) return '';
-              
-              const netColor = data.net >= 0 ? 'var(--accent)' : '#ef4444';
-              const netIcon = data.net >= 0 ? '📈' : '📉';
-              const netBg = data.net >= 0 ? 'rgba(6, 214, 160, 0.05)' : 'rgba(239, 68, 68, 0.05)';
-              
-              return `
+                const data = monthlyFlow[month.key];
+                if (!data || (data.receivable === 0 && data.payable === 0)) return '';
+
+                const netColor = data.net >= 0 ? 'var(--accent)' : '#ef4444';
+                const netIcon = data.net >= 0 ? '📈' : '📉';
+                const netBg = data.net >= 0 ? 'rgba(6, 214, 160, 0.05)' : 'rgba(239, 68, 68, 0.05)';
+
+                return `
                 <div style="
                   background: white; 
                   border-radius: 16px; 
@@ -1552,8 +2089,7 @@
                           <div>รายรับ</div>
                           <div style="font-size: 0.8rem; font-weight: 500; opacity: 0.8;">${fmt(data.receivable)} บาท</div>
                         </div>
-                      </h5>
-                      ${data.receivableItems.length > 0 ? data.receivableItems.map(item => `
+                      </h5>                      ${data.receivableItems.length > 0 ? data.receivableItems.map(item => `
                         <div style="
                           font-size: 0.85rem; 
                           color: var(--subtext); 
@@ -1563,10 +2099,60 @@
                           border-radius: 8px;
                           border-left: 3px solid var(--accent);
                         ">
-                          <div style="font-weight: 600; color: var(--text); margin-bottom: 0.25rem;">
-                            • งวด ${item.no} (${item.percent}%)
-                          </div>
-                          <div style="color: var(--accent); font-weight: 600;">${fmt(item.amount)} บาท</div>
+                          <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                            <div style="font-weight: 600; color: var(--text);">
+                              • งวด ${item.no} (${item.percent}%)
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 0.25rem; align-items: flex-end;">
+                              <!-- Milestone Status Badge -->
+                              <div style="
+                                background: ${getMilestoneStatusInfo(item.status).bg}; 
+                                color: ${getMilestoneStatusInfo(item.status).color}; 
+                                padding: 0.2rem 0.5rem; 
+                                border-radius: 8px; 
+                                font-size: 0.7rem; 
+                                font-weight: 600;
+                                display: flex;
+                                align-items: center;
+                                gap: 0.2rem;
+                              ">
+                                <span>${getMilestoneStatusInfo(item.status).icon}</span>
+                                <span>${getMilestoneStatusInfo(item.status).text}</span>
+                              </div>
+                              <!-- Payment Status Badge -->
+                              <div style="
+                                background: ${getPaymentStatusInfo(item.paymentStatus).bg}; 
+                                color: ${getPaymentStatusInfo(item.paymentStatus).color}; 
+                                padding: 0.2rem 0.5rem; 
+                                border-radius: 8px; 
+                                font-size: 0.7rem; 
+                                font-weight: 600;
+                                display: flex;
+                                align-items: center;
+                                gap: 0.2rem;
+                              ">
+                                <span>${getPaymentStatusInfo(item.paymentStatus).icon}</span>
+                                <span>${getPaymentStatusInfo(item.paymentStatus).text}</span>
+                              </div>
+                            </div>
+                          </div>                          <div style="color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;">${fmt(item.amount)} บาท</div>
+                          <!-- Document Progress -->
+                          ${item.documentsRequired?.length > 0 ? `
+                            <div style="background: rgba(0,0,0,0.03); padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem;">
+                              <div style="font-size: 0.75rem; color: var(--text); font-weight: 600; margin-bottom: 0.25rem;">📋 เอกสาร</div>
+                              <div style="font-size: 0.7rem; color: var(--subtext);">
+                                ${item.documentsReceived?.length || 0}/${item.documentsRequired?.length || 0} รายการ
+                                <span style="margin-left: 0.5rem; ${(item.documentsReceived?.length || 0) === (item.documentsRequired?.length || 0) ? 'color: var(--accent);' : 'color: #ef4444;'}">
+                                  ${(item.documentsReceived?.length || 0) === (item.documentsRequired?.length || 0) ? '✅ ครบ' : '📄 ยังไม่ครบ'}
+                                </span>
+                              </div>
+                            </div>
+                          ` : ''}
+                          ${item.notes ? `
+                            <div style="margin-top: 0.5rem; padding: 0.5rem; background: rgba(0,0,0,0.03); border-radius: 6px; border-left: 2px solid var(--accent);">
+                              <div style="font-size: 0.75rem; color: var(--subtext); font-style: italic;">💬 ${item.notes}</div>
+                            </div>
+                          ` : ''}
                         </div>
                       `).join('') : '<div style="font-size: 0.85rem; color: var(--subtext); font-style: italic; text-align: center; padding: 1rem; background: rgba(0,0,0,0.02); border-radius: 8px;">ไม่มีรายรับ</div>'}
                     </div>
@@ -1590,19 +2176,18 @@
                           <div>รายจ่าย</div>
                           <div style="font-size: 0.8rem; font-weight: 500; opacity: 0.8;">${fmt(data.payable)} บาท</div>
                         </div>
-                      </h5>
-                      ${data.payableItems.length > 0 ? data.payableItems.map(item => {
-                        let paymentStatusBadge = '';
-                        if (item.paymentDate) {
-                          const dateInfo = formatDate(item.paymentDate);
-                          const badgeColors = {
+                      </h5>                      ${data.payableItems.length > 0 ? data.payableItems.map(item => {
+                    let paymentStatusBadge = '';
+                    if (item.paymentDate) {
+                        const dateInfo = formatDate(item.paymentDate);
+                        const badgeColors = {
                             'overdue': { bg: '#fee2e2', color: '#dc2626' },
                             'urgent': { bg: '#fef3c7', color: '#d97706' },
                             'soon': { bg: '#dbeafe', color: '#2563eb' },
                             'normal': { bg: '#dcfce7', color: '#059669' }
-                          };
-                          const colors = badgeColors[dateInfo.class];
-                          paymentStatusBadge = `
+                        };
+                        const colors = badgeColors[dateInfo.class];
+                        paymentStatusBadge = `
                             <div style="
                               background: ${colors.bg}; 
                               color: ${colors.color}; 
@@ -1618,8 +2203,8 @@
                               ${dateInfo.icon} ${dateInfo.daysLeft < 0 ? 'เลยกำหนด' : dateInfo.daysLeft <= 7 ? 'ด่วน' : 'ปกติ'}
                             </div>
                           `;
-                        }
-                        return `
+                    }
+                    return `
                           <div style="
                             font-size: 0.85rem; 
                             color: var(--subtext); 
@@ -1629,14 +2214,65 @@
                             border-radius: 8px;
                             border-left: 3px solid #ef4444;
                           ">
-                            <div style="font-weight: 600; color: var(--text); margin-bottom: 0.25rem;">
-                              • ${item.vendor}
-                            </div>
-                            <div style="color: #ef4444; font-weight: 600; margin-bottom: 0.25rem;">${fmt(item.amount)} บาท</div>
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                              <div style="font-weight: 600; color: var(--text);">
+                                • ${item.vendor} (งวด ${item.no})
+                                ${item.termPayment ? '<span style="background: #3b82f6; color: white; padding: 0.1rem 0.4rem; border-radius: 6px; font-size: 0.7rem; margin-left: 0.5rem;">Term</span>' : ''}
+                              </div>
+                              <div style="display: flex; flex-direction: column; gap: 0.25rem; align-items: flex-end;">
+                                <!-- Milestone Status Badge -->
+                                <div style="
+                                  background: ${getMilestoneStatusInfo(item.status).bg}; 
+                                  color: ${getMilestoneStatusInfo(item.status).color}; 
+                                  padding: 0.2rem 0.5rem; 
+                                  border-radius: 8px; 
+                                  font-size: 0.7rem; 
+                                  font-weight: 600;
+                                  display: flex;
+                                  align-items: center;
+                                  gap: 0.2rem;
+                                ">
+                                  <span>${getMilestoneStatusInfo(item.status).icon}</span>
+                                  <span>${getMilestoneStatusInfo(item.status).text}</span>
+                                </div>
+                                <!-- Payment Status Badge -->
+                                <div style="
+                                  background: ${getPaymentStatusInfo(item.paymentStatus).bg}; 
+                                  color: ${getPaymentStatusInfo(item.paymentStatus).color}; 
+                                  padding: 0.2rem 0.5rem; 
+                                  border-radius: 8px; 
+                                  font-size: 0.7rem; 
+                                  font-weight: 600;
+                                  display: flex;
+                                  align-items: center;
+                                  gap: 0.2rem;
+                                ">
+                                  <span>${getPaymentStatusInfo(item.paymentStatus).icon}</span>
+                                  <span>${getPaymentStatusInfo(item.paymentStatus).text}</span>
+                                </div>
+                              </div>
+                            </div>                            <div style="color: #ef4444; font-weight: 600; margin-bottom: 0.5rem;">${fmt(item.amount)} บาท</div>
+                            <!-- Document Progress -->
+                            ${item.documentsRequired?.length > 0 ? `
+                              <div style="background: rgba(0,0,0,0.03); padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem;">
+                                <div style="font-size: 0.75rem; color: var(--text); font-weight: 600; margin-bottom: 0.25rem;">📋 เอกสาร</div>
+                                <div style="font-size: 0.7rem; color: var(--subtext);">
+                                  ${item.documentsReceived?.length || 0}/${item.documentsRequired?.length || 0} รายการ
+                                  <span style="margin-left: 0.5rem; ${(item.documentsReceived?.length || 0) === (item.documentsRequired?.length || 0) ? 'color: var(--accent);' : 'color: #ef4444;'}">
+                                    ${(item.documentsReceived?.length || 0) === (item.documentsRequired?.length || 0) ? '✅ ครบ' : '📄 ยังไม่ครบ'}
+                                  </span>
+                                </div>
+                              </div>
+                            ` : ''}
+                            ${item.notes ? `
+                              <div style="margin-top: 0.5rem; padding: 0.5rem; background: rgba(0,0,0,0.03); border-radius: 6px; border-left: 2px solid #ef4444;">
+                                <div style="font-size: 0.75rem; color: var(--subtext); font-style: italic;">💬 ${item.notes}</div>
+                              </div>
+                            ` : ''}
                             ${paymentStatusBadge}
                           </div>
                         `;
-                      }).join('') : '<div style="font-size: 0.85rem; color: var(--subtext); font-style: italic; text-align: center; padding: 1rem; background: rgba(0,0,0,0.02); border-radius: 8px;">ไม่มีรายจ่าย</div>'}
+                }).join('') : '<div style="font-size: 0.85rem; color: var(--subtext); font-style: italic; text-align: center; padding: 1rem; background: rgba(0,0,0,0.02); border-radius: 8px;">ไม่มีรายจ่าย</div>'}
                     </div>
                   </div>
                   
@@ -1668,53 +2304,79 @@
                     </div>
                   </div>
                 </div>
-              `;
-            }).filter(html => html).join('')}
+              `;            }).filter(html => html).join('')}
           </div>
         </div>
       `;
-    }/* ---------  Helpers  --------- */
-    function fmt(n) {
-      return (+n).toLocaleString('en-US', { minimumFractionDigits: 2 });
-    }
-    
-    function formatDate(dateString) {
-      if (!dateString) return '';
-      const date = new Date(dateString);
-      const today = new Date();
-      const diffTime = date - today;
-      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
       
-      const thaiDate = date.toLocaleDateString('th-TH', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric'
-      });
+      // Add cumulative cash flow footer to Cash Flow Dashboard
+      const totalReceivableCashFlow = customer ? customer.total : 0;
+      const totalPayableCashFlow = vendors.reduce((sum, v) => sum + v.total, 0);
+      const netCashFlowCashFlow = totalReceivableCashFlow - totalPayableCashFlow;
+      const profitMarginCashFlow = totalReceivableCashFlow > 0 ? ((netCashFlowCashFlow / totalReceivableCashFlow) * 100) : 0;
       
-      let statusIcon = '';
-      let statusClass = '';
-      
-      if (diffDays < 0) {
-        statusIcon = '⚠️';
-        statusClass = 'overdue';
-      } else if (diffDays <= 7) {
-        statusIcon = '🔥';
-        statusClass = 'urgent';
-      } else if (diffDays <= 30) {
-        statusIcon = '⏰';
-        statusClass = 'soon';
-      } else {
-        statusIcon = '📅';
-        statusClass = 'normal';
-      }
-      
-      return {
-        formatted: thaiDate,
-        icon: statusIcon,
-        class: statusClass,
-        daysLeft: diffDays
-      };
-    }
-  </script>
+      container.insertAdjacentHTML('beforeend', `
+          <div style="
+            background: linear-gradient(135deg, ${netCashFlowCashFlow >= 0 ? 'var(--accent)' : '#ef4444'}, ${netCashFlowCashFlow >= 0 ? '#059669' : '#dc2626'}); 
+            color: white; 
+            padding: 2rem; 
+            border-radius: 16px; 
+            text-align: center; 
+            margin-top: 2rem;
+            box-shadow: var(--shadow);
+          ">
+            <div style="font-size: 1rem; margin-bottom: 0.5rem; opacity: 0.9;">💼 กระแสเงินสะสม</div>
+            <div style="font-size: 2.2rem; font-weight: bold; margin-bottom: 0.5rem;">
+              ${netCashFlowCashFlow >= 0 ? '📈' : '📉'} ${fmt(Math.abs(netCashFlowCashFlow))} บาท
+            </div>
+            <div style="font-size: 0.9rem; opacity: 0.8;">
+              ${netCashFlowCashFlow >= 0 ? 'เงินคงเหลือสุทธิ' : 'เงินขาดแคลนสุทธิ'} • อัตรากำไร ${profitMarginCashFlow.toFixed(1)}%
+            </div>
+          </div>
+      `);
+        }/* ---------  Helpers  --------- */
+        function fmt(n) {
+            return (+n).toLocaleString('en-US', { minimumFractionDigits: 2 });
+        }
+
+        function formatDate(dateString) {
+            if (!dateString) return '';
+            const date = new Date(dateString);
+            const today = new Date();
+            const diffTime = date - today;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+            const thaiDate = date.toLocaleDateString('th-TH', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+
+            let statusIcon = '';
+            let statusClass = '';
+
+            if (diffDays < 0) {
+                statusIcon = '⚠️';
+                statusClass = 'overdue';
+            } else if (diffDays <= 7) {
+                statusIcon = '🔥';
+                statusClass = 'urgent';
+            } else if (diffDays <= 30) {
+                statusIcon = '⏰';
+                statusClass = 'soon';
+            } else {
+                statusIcon = '📅';
+                statusClass = 'normal';
+            }
+
+            return {
+                formatted: thaiDate,
+                icon: statusIcon,
+                class: statusClass,
+                daysLeft: diffDays
+            };
+        }
+    </script>
 </body>
+
 </html>

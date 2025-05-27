@@ -2,186 +2,453 @@
   "contracts": [
     {
       "name": "BRS",
+      "type": "customer",
       "total": 204156689.31,
       "milestones": [
         {
           "no": 1,
           "plan": "เดือน มิ.ย. 68",
+          "dueDate": "2025-06-30",
           "description": "หลังได้รับใบสั่งซื้อ",
           "percent": 30,
-          "amount": 61247006.79
+          "amount": 61247006.79,
+          "status": "pending",
+          "documentsRequired": [
+            "ใบสั่งซื้อที่ลงนามแล้ว",
+            "ใบแจ้งหนี้ (Invoice)",
+            "ใบกำกับภาษี",
+            "สำเนาหนังสือรับรองบริษัท"
+          ],
+          "documentsReceived": [
+            "ใบสั่งซื้อที่ลงนามแล้ว",
+            "ใบแจ้งหนี้ (Invoice)"
+          ],
+          "paymentStatus": "waiting_for_documents",
+          "notes": "รอใบสั่งซื้อจากลูกค้า"
         },
         {
           "no": 2,
           "plan": "เดือน ก.ค. 68",
+          "dueDate": "2025-07-31",
           "description": "เมื่อส่งมอบงาน Zone 1-3 และ RGV 8 คัน",
           "percent": 20,
-          "amount": 40831337.86
+          "amount": 40831337.86,
+          "status": "pending",
+          "documentsRequired": [
+            "ใบรับรองการส่งมอบงาน Zone 1-3",
+            "ใบรับรองการติดตั้ง RGV 8 คัน",
+            "ใบแจ้งหนี้ (Invoice)",
+            "ใบกำกับภาษี",
+            "Test Report และ Acceptance Certificate"
+          ],
+          "documentsReceived": [],
+          "paymentStatus": "not_started",
+          "notes": "รอการส่งมอบงาน Zone 1-3"
         },
         {
           "no": 3,
           "plan": "เดือน ก.ย. 68",
-          "description": "เมื่อส่งมอบงาน Zone 4-6\nRGV Retrofit 24 คัน\nShuttle Rack ASRS 20,469 Location",
+          "dueDate": "2025-09-30",
+          "description": "เมื่อส่งมอบงาน Zone 4-6\n- RGV Retrofit 24 คัน\n- Shuttle Rack ASRS 20,469 Location",
           "percent": 20,
-          "amount": 40831337.86
+          "amount": 40831337.86,
+          "status": "pending",
+          "documentsRequired": [
+            "ใบรับรองการส่งมอบงาน Zone 4-6",
+            "ใบรับรองการ Retrofit RGV 24 คัน",
+            "ใบรับรองการติดตั้ง Shuttle Rack ASRS",
+            "ใบแจ้งหนี้ (Invoice)",
+            "ใบกำกับภาษี",
+            "System Integration Test Report"
+          ],
+          "documentsReceived": [],
+          "paymentStatus": "not_started",
+          "notes": "รอการส่งมอบงาน Zone 4-6"
         },
         {
           "no": 4,
           "plan": "เดือน ธ.ค. 68",
+          "dueDate": "2025-12-31",
           "description": "เมื่อส่งมอบงานและผ่านการทดสอบระบบการจัดการคลังสินค้าทั้งระบบ",
           "percent": 30,
-          "amount": 61247006.8
+          "amount": 61247006.8,
+          "status": "pending",
+          "documentsRequired": [
+            "ใบรับรองการส่งมอบงานทั้งระบบ",
+            "System Acceptance Test Report",
+            "Final Performance Test Report",
+            "ใบแจ้งหนี้ (Invoice)",
+            "ใบกำกับภาษี",
+            "Warranty Certificate",
+            "User Manual และ Training Certificate"
+          ],
+          "documentsReceived": [],
+          "paymentStatus": "not_started",
+          "notes": "รอการทดสอบระบบทั้งระบบ"
         }
       ]
     },
     {
       "name": "Auto Motion Works",
+      "type": "vendor",
       "total": 181230423.53,
       "milestones": [
         {
           "no": 1,
-          "plan": "แ",
-          "paymentDate": "2025-06",
-          "description": "หลังได้รับใบสั่งซื้อ",
+          "termPayment": 1,
+          "plan": "เมื่อลงนามใบสั่งซื้อ",
+          "paymentDate": "2025-06-15",
           "percent": 30,
-          "amount": 54391272.24
+          "amount": 54391272.24,
+          "status": "pending",
+          "description": "เมื่อผู้ขายสินค้าได้รับใบสั่งซื้อ",
+          "documentsRequired": [
+            "ใบสั่งซื้อที่ลงนามแล้ว",
+            "ใบแจ้งหนี้ (Invoice)",
+            "ใบกำกับภาษี",
+            "ใบขออนุมัติเบิกจ่าย",
+            "Performance Bond"
+          ],
+          "documentsReceived": [],
+          "paymentStatus": "document_review",
+          "notes": "อยู่ระหว่างตรวจสอบเอกสาร"
         },
         {
           "no": 2,
-          "plan": "เดือน มิ.ย. 68",
-          "paymentDate": "2025-06",
-          "description": "เมื่อส่งมอบสินค้า/เครื่องจักร",
+          "termPayment": 2,
+          "plan": "งานงวดที่ 2",
+          "paymentDate": "2025-06-30",
           "percent": 17,
-          "amount": 30812210.93
+          "amount": 30812210.93,
+          "status": "pending",
+          "description": "ส่งมอบ Zone 1–3 และส่วนอุปกรณ์หลัก (รายละเอียดด้านล่าง)\n• Zone 1 – Lift High 6.5 m (ปรับปรุง/คืนสภาพ 1 job)\n• Zone 2 – Lift High 6.5 m (ผลิตใหม่ 1 set + ทำสี), Chain Conveyor L 1.5 m (3 set), L 2.0 m (1 set), L 3.0 m (2 set), Pop-up 1.2 m (2 set)\n• Zone 3 – Lift High 6.5 m (ปรับปรุง/คืนสภาพ 1 job)\n• Zone 4 – Rack Shuttle Lot 1 (10 235 Locations)\n• Zone 5 – Lift High 29.3 m (2 set), Chain Conv W1200 × L1400 (24 set), Turntable-RTNX Prod loop (3 set), Chain Conv W1200 × L1200 (1 set)\n• Zone 6 – Lift High 29.3 m (3 set), Chain Conv W1200 × L1400 (25 set), Turntable-RTNX Dock loop (5 set), Chain Conv W1200 × L1200 (2 set)",
+          "documentsRequired": [
+            "ใบส่งของ (Delivery Note)",
+            "ใบแจ้งหนี้ (Invoice)",
+            "ใบกำกับภาษี",
+            "ใบขออนุมัติเบิกจ่าย",
+            "ใบรับรองคุณภาพสินค้า"
+          ],
+          "documentsReceived": [],
+          "paymentStatus": "not_started",
+          "notes": "รอการส่งมอบงาน Zone 1–3"
         },
         {
           "no": 3,
-          "plan": "เดือน ก.ค. 68",
-          "paymentDate": "2025-07",
-          "description": "ติดตั้งและทดสอบระบบ Lift, Conveyor, POP-UP, RGV 8 คัน – Rack 10,234 location",
+          "termPayment": 3,
+          "plan": "งานงวดที่ 3",
+          "paymentDate": "2025-07-15",
           "percent": 28,
-          "amount": 50793897.42
+          "amount": 50793897.42,
+          "status": "pending",
+          "description": "ติดตั้งและทดสอบ Zone 2/4/5/6 ชุดที่ 2 (รวม Rack Shuttle Lot 1 & Lot 2) ตามรายละเอียดในตาราง Term Payment 3",
+          "documentsRequired": [
+            "ใบรับรองการติดตั้งระบบ",
+            "Test Report",
+            "ใบแจ้งหนี้ (Invoice)",
+            "ใบกำกับภาษี",
+            "ใบขออนุมัติเบิกจ่าย",
+            "Photo Documentation"
+          ],
+          "documentsReceived": [],
+          "paymentStatus": "not_started",
+          "notes": "รอการติดตั้งและทดสอบ"
         },
         {
           "no": 4,
-          "plan": "เดือน ส.ค. 68",
-          "paymentDate": "2025-08",
-          "description": "ส่งมอบสินค้า Rack 10,234 locations (ยังไม่ติดตั้ง) + Retrofit RGV 11 คัน",
+          "termPayment": 4,
+          "plan": "งานงวดที่ 4",
+          "paymentDate": "2025-08-15",
           "percent": 6.22,
-          "amount": 112796.17
+          "amount": 112796.17,
+          "status": "pending",
+          "description": "Shuttle Car 4-way 11 set และ Charging Kit 11 set (Zone 4) พร้อมรับ-คืน/Retrofit RGV 11 คัน",
+          "documentsRequired": [
+            "ใบส่งของ",
+            "ใบรับรองการ Retrofit RGV",
+            "ใบแจ้งหนี้ (Invoice)",
+            "ใบกำกับภาษี",
+            "ใบขออนุมัติเบิกจ่าย"
+          ],
+          "documentsReceived": [],
+          "paymentStatus": "not_started",
+          "notes": "รอการส่งมอบ Shuttle Car & RGV"
         },
         {
           "no": 5,
-          "plan": "เดือน ก.ย. 68",
-          "paymentDate": "2025-09",
-          "description": "ติดตั้งและทดสอบ Rack 10,234 locations + Retrofit RGV 13 คัน",
+          "termPayment": 5,
+          "plan": "งานงวดที่ 5",
+          "paymentDate": "2025-09-15",
           "percent": 10.54,
-          "amount": 19109150.78
+          "amount": 19109150.78,
+          "status": "pending",
+          "description": "ติดตั้ง Rack Shuttle Lot 2 (10 235 Location), Shuttle Car 4-way 11 set, Charging Kit 11 set และส่งมอบ RGV 13 คันหลัง Retrofit (Inbound 11 / Outbound 2) พร้อมรับ-คืน RGV 8 คันที่ให้ลูกค้าใช้งานก่อน",
+          "documentsRequired": [
+            "ใบรับรองการติดตั้ง Rack",
+            "ใบรับรองการ Retrofit RGV 13 คัน",
+            "Final Test Report",
+            "ใบแจ้งหนี้ (Invoice)",
+            "ใบกำกับภาษี",
+            "ใบขออนุมัติเบิกจ่าย"
+          ],
+          "documentsReceived": [],
+          "paymentStatus": "not_started",
+          "notes": "รอการติดตั้ง Rack และ RGV"
         },
         {
           "no": 6,
-          "plan": "เดือน ธ.ค. 68",
-          "paymentDate": "2025-12",
-          "description": "ส่งมอบงานติดตั้งและจัดเก็บสินค้าอัตโนมัติทั้งระบบพร้อมใช้งาน",
+          "termPayment": 6,
+          "plan": "งานงวดสุดท้าย",
+          "paymentDate": "2025-12-15",
           "percent": 8.24,
-          "amount": 15607422.24
+          "amount": 15607422.24,
+          "status": "pending",
+          "description": "เมื่อดำเนินการส่งมอบงานติดตั้งและจัดเก็บสินค้าอัตโนมัติทั้งระบบ พร้อมใช้งานโดยไม่มีปัญหาหยุดระบบ > 4 ชม. เป็นเวลา 30 วัน และผู้ซื้อตรวจรับภายใน 7 วัน",
+          "documentsRequired": [
+            "ใบรับรองการส่งมอบงานทั้งระบบ",
+            "Final Acceptance Certificate",
+            "Warranty Certificate",
+            "ใบแจ้งหนี้ (Invoice)",
+            "ใบกำกับภาษี",
+            "ใบขออนุมัติเบิกจ่าย",
+            "Training Certificate"
+          ],
+          "documentsReceived": [],
+          "paymentStatus": "not_started",
+          "notes": "รอการส่งมอบงานทั้งระบบ"
         }
       ]
     },
     {
       "name": "ICAS Technology",
+      "type": "vendor",
       "total": 5032000.0,
       "milestones": [
         {
           "no": 1,
           "plan": "เดือน มิ.ย. 68",
-          "paymentDate": "2025-06",
+          "paymentDate": "2025-06-30",
+          "description": "งวดงานที่ 1",
           "percent": 30,
-          "amount": 1509600.0
+          "amount": 1509600.0,
+          "status": "pending",
+          "documentsRequired": [
+            "ใบแจ้งหนี้ (Invoice)",
+            "ใบกำกับภาษี",
+            "ใบขออนุมัติเบิกจ่าย",
+            "ใบรับรองการส่งมอบงาน"
+          ],
+          "documentsReceived": [],
+          "paymentStatus": "not_started",
+          "notes": "งวดงานที่ 1"
         },
         {
           "no": 2,
           "plan": "เดือน ก.ค. 68",
-          "paymentDate": "2025-07",
+          "paymentDate": "2025-07-30",
+          "description": "งวดงานที่ 2",
           "percent": 30,
-          "amount": 1509600.0
+          "amount": 1509600.0,
+          "status": "pending",
+          "documentsRequired": [
+            "ใบแจ้งหนี้ (Invoice)",
+            "ใบกำกับภาษี",
+            "ใบขออนุมัติเบิกจ่าย",
+            "ใบรับรองการส่งมอบงาน"
+          ],
+          "documentsReceived": [],
+          "paymentStatus": "not_started",
+          "notes": "งวดงานที่ 2"
         },
         {
           "no": 3,
           "plan": "เดือน ก.ย. 68",
-          "paymentDate": "2025-09",
+          "paymentDate": "2025-09-30",
+          "description": "งวดงานที่ 3",
           "percent": 30,
-          "amount": 1509600.0
+          "amount": 1509600.0,
+          "status": "pending",
+          "documentsRequired": [
+            "ใบแจ้งหนี้ (Invoice)",
+            "ใบกำกับภาษี",
+            "ใบขออนุมัติเบิกจ่าย",
+            "ใบรับรองการส่งมอบงาน"
+          ],
+          "documentsReceived": [],
+          "paymentStatus": "not_started",
+          "notes": "งวดงานที่ 3"
         },
         {
           "no": 4,
           "plan": "เดือน ธ.ค. 68",
-          "paymentDate": "2025-12",
+          "paymentDate": "2025-12-30",
+          "description": "งวดงานสุดท้าย",
           "percent": 10,
-          "amount": 503200.0
+          "amount": 503200.0,
+          "status": "pending",
+          "documentsRequired": [
+            "ใบแจ้งหนี้ (Invoice)",
+            "ใบกำกับภาษี",
+            "ใบขออนุมัติเบิกจ่าย",
+            "ใบรับรองการส่งมอบงานทั้งระบบ",
+            "Warranty Certificate"
+          ],
+          "documentsReceived": [],
+          "paymentStatus": "not_started",
+          "notes": "งวดงานสุดท้าย"
         }
       ]
     },
     {
       "name": "KM × TEN",
+      "type": "vendor",
       "total": 825000.0,
       "milestones": [
         {
           "no": 1,
           "plan": "เดือน มิ.ย. 68",
-          "paymentDate": "2025-06",
+          "paymentDate": "2025-06-30",
+          "description": "งวดงานที่ 1",
           "percent": 20,
-          "amount": 165000.0
+          "amount": 165000.0,
+          "status": "pending",
+          "documentsRequired": [
+            "ใบแจ้งหนี้ (Invoice)",
+            "ใบกำกับภาษี",
+            "ใบขออนุมัติเบิกจ่าย",
+            "ใบรับรองการส่งมอบงาน"
+          ],
+          "documentsReceived": [],
+          "paymentStatus": "not_started",
+          "notes": "งวดงานที่ 1"
         },
         {
           "no": 2,
-          "plan": "เดือน มิ.ย. 68",
-          "paymentDate": "2025-07",
+          "plan": "เดือน ก.ค. 68",
+          "paymentDate": "2025-07-30",
+          "description": "งวดงานที่ 2",
           "percent": 30,
-          "amount": 247500.0
+          "amount": 247500.0,
+          "status": "pending",
+          "documentsRequired": [
+            "ใบแจ้งหนี้ (Invoice)",
+            "ใบกำกับภาษี",
+            "ใบขออนุมัติเบิกจ่าย",
+            "ใบรับรองการส่งมอบงาน"
+          ],
+          "documentsReceived": [],
+          "paymentStatus": "not_started",
+          "notes": "งวดงานที่ 2"
         },
         {
           "no": 3,
-          "plan": "เดือน มิ.ย. 68",
-          "paymentDate": "2025-09",
+          "plan": "เดือน ก.ย. 68",
+          "paymentDate": "2025-09-30",
+          "description": "งวดงานที่ 3",
           "percent": 30,
-          "amount": 247500.0
+          "amount": 247500.0,
+          "status": "pending",
+          "documentsRequired": [
+            "ใบแจ้งหนี้ (Invoice)",
+            "ใบกำกับภาษี",
+            "ใบขออนุมัติเบิกจ่าย",
+            "ใบรับรองการส่งมอบงาน"
+          ],
+          "documentsReceived": [],
+          "paymentStatus": "not_started",
+          "notes": "งวดงานที่ 3"
         },
         {
           "no": 4,
-          "plan": "เดือน มิ.ย. 68",
-          "paymentDate": "2025-12",
+          "plan": "เดือน ธ.ค. 68",
+          "paymentDate": "2025-12-30",
+          "description": "งวดงานสุดท้าย",
           "percent": 20,
-          "amount": 165000.0
+          "amount": 165000.0,
+          "status": "pending",
+          "documentsRequired": [
+            "ใบแจ้งหนี้ (Invoice)",
+            "ใบกำกับภาษี",
+            "ใบขออนุมัติเบิกจ่าย",
+            "ใบรับรองการส่งมอบงานทั้งระบบ",
+            "Warranty Certificate"
+          ],
+          "documentsReceived": [],
+          "paymentStatus": "not_started",
+          "notes": "งวดงานสุดท้าย"
         }
       ]
     },
     {
       "name": "Get on Technology",
+      "type": "vendor",
       "total": 1285644.36,
       "milestones": [
         {
           "no": 1,
           "plan": "เดือน มิ.ย. 68",
-          "paymentDate": "2025-06",
+          "paymentDate": "2025-06-30",
+          "description": "การชำระเงินครั้งเดียว",
           "percent": 100,
-          "amount": 1285644.36
+          "amount": 1285644.36,
+          "status": "pending",
+          "documentsRequired": [
+            "ใบแจ้งหนี้ (Invoice)",
+            "ใบกำกับภาษี",
+            "ใบขออนุมัติเบิกจ่าย",
+            "ใบรับรองการส่งมอบงานทั้งระบบ",
+            "Warranty Certificate"
+          ],
+          "documentsReceived": [],
+          "paymentStatus": "not_started",
+          "notes": "ชำระเงินครั้งเดียวทั้งหมด"
         }
       ]
     },
     {
       "name": "Total IP Solutions",
+      "type": "vendor",
       "total": 652128.0,
       "milestones": [
         {
           "no": 1,
           "plan": "เดือน มิ.ย. 68",
-          "paymentDate": "2025-06",
+          "paymentDate": "2025-06-30",
+          "description": "การชำระเงินครั้งเดียว",
           "percent": 100,
-          "amount": 652128.0
+          "amount": 652128.0,
+          "status": "pending",
+          "documentsRequired": [
+            "ใบแจ้งหนี้ (Invoice)",
+            "ใบกำกับภาษี",
+            "ใบขออนุมัติเบิกจ่าย",
+            "ใบรับรองการส่งมอบงานทั้งระบบ",
+            "Warranty Certificate"
+          ],
+          "documentsReceived": [],
+          "paymentStatus": "not_started",
+          "notes": "ชำระเงินครั้งเดียวทั้งหมด"
         }
       ]
     }
   ],
-  "grand_total": 189245363.14
+  "grand_total": 189245363.14,
+  "metadata": {
+    "lastUpdated": "2025-05-27",
+    "version": "2.0",
+    "statusDefinitions": {
+      "pending": "รอการดำเนินการ",
+      "in_progress": "กำลังดำเนินการ",
+      "completed": "เสร็จสิ้น",
+      "cancelled": "ยกเลิก"
+    },
+    "paymentStatusDefinitions": {
+      "not_started": "ยังไม่เริ่ม",
+      "waiting_for_documents": "รอเอกสาร",
+      "document_review": "ตรวจสอบเอกสาร",
+      "approved": "อนุมัติแล้ว",
+      "paid": "จ่ายแล้ว",
+      "overdue": "เลยกำหนด"
+    }
+  }
 }
