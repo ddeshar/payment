@@ -566,19 +566,19 @@
 
     <div class="nav-container">
         <div class="nav-tabs">
-            <button class="nav-tab active" onclick="showDashboard('detailed')">
+            <button class="nav-tab active" onclick="showDashboard('detailed', event)">
                 📋 รายละเอียดโครงการ
             </button>
-            <button class="nav-tab" onclick="showDashboard('summary')">
+            <button class="nav-tab" onclick="showDashboard('summary', event)">
                 💰 สรุปการเงิน
             </button>
-            <button class="nav-tab" onclick="showDashboard('chart')">
+            <button class="nav-tab" onclick="showDashboard('chart', event)">
                 📊 กราฟเปรียบเทียบ
             </button>
-            <button class="nav-tab" onclick="showDashboard('timeline')">
+            <button class="nav-tab" onclick="showDashboard('timeline', event)">
                 ⏰ ไทม์ไลน์การส่งมอบ
             </button>
-            <button class="nav-tab" onclick="showDashboard('cashflow')">
+            <button class="nav-tab" onclick="showDashboard('cashflow', event)">
                 💸 กระแสเงินสด
             </button>
         </div>
@@ -633,7 +633,7 @@
             });
 
         /* ---------  Dashboard Navigation  --------- */
-        function showDashboard(type) {
+        function showDashboard(type, event) {
             // Hide all sections
             document.querySelectorAll('.dashboard-section').forEach(section => {
                 section.classList.remove('active');
