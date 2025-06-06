@@ -99,7 +99,7 @@
           "plan": "เมื่อลงนามใบสั่งซื้อ",
           "paymentDate": "2025-06-15",
           "percent": 30,
-          "amount": 54391272.24,
+          "amount": 54369127.06,
           "status": "pending",
           "description": "เมื่อผู้ขายสินค้าได้รับใบสั่งซื้อ",
           "documentsRequired": [
@@ -119,7 +119,7 @@
           "plan": "งานงวดที่ 2",
           "paymentDate": "2025-06-30",
           "percent": 17,
-          "amount": 30812210.93,
+          "amount": 30809172.00,
           "status": "pending",
           "description": "ส่งมอบ Zone 1–3 และส่วนอุปกรณ์หลัก (รายละเอียดด้านล่าง)\n• Zone 1 – Lift High 6.5 m (ปรับปรุง/คืนสภาพ 1 job)\n• Zone 2 – Lift High 6.5 m (ผลิตใหม่ 1 set + ทำสี), Chain Conveyor L 1.5 m (3 set), L 2.0 m (1 set), L 3.0 m (2 set), Pop-up 1.2 m (2 set)\n• Zone 3 – Lift High 6.5 m (ปรับปรุง/คืนสภาพ 1 job)\n• Zone 4 – Rack Shuttle Lot 1 (10 235 Locations)\n• Zone 5 – Lift High 29.3 m (2 set), Chain Conv W1200 × L1400 (24 set), Turntable-RTNX Prod loop (3 set), Chain Conv W1200 × L1200 (1 set)\n• Zone 6 – Lift High 29.3 m (3 set), Chain Conv W1200 × L1400 (25 set), Turntable-RTNX Dock loop (5 set), Chain Conv W1200 × L1200 (2 set)",
           "documentsRequired": [
@@ -139,7 +139,7 @@
           "plan": "งานงวดที่ 3",
           "paymentDate": "2025-07-15",
           "percent": 28,
-          "amount": 50793897.42,
+          "amount": 50744518.59,
           "status": "pending",
           "description": "ติดตั้งและทดสอบ Zone 2/4/5/6 ชุดที่ 2 (รวม Rack Shuttle Lot 1 & Lot 2) ตามรายละเอียดในตาราง Term Payment 3",
           "documentsRequired": [
@@ -160,7 +160,7 @@
           "plan": "งานงวดที่ 4",
           "paymentDate": "2025-08-15",
           "percent": 6.22,
-          "amount": 112796.17,
+          "amount": 11272532.34,
           "status": "pending",
           "description": "Shuttle Car 4-way 11 set และ Charging Kit 11 set (Zone 4) พร้อมรับ-คืน/Retrofit RGV 11 คัน",
           "documentsRequired": [
@@ -180,7 +180,7 @@
           "plan": "งานงวดที่ 5",
           "paymentDate": "2025-09-15",
           "percent": 10.54,
-          "amount": 19109150.78,
+          "amount": 19101686.64,
           "status": "pending",
           "description": "ติดตั้ง Rack Shuttle Lot 2 (10 235 Location), Shuttle Car 4-way 11 set, Charging Kit 11 set และส่งมอบ RGV 13 คันหลัง Retrofit (Inbound 11 / Outbound 2) พร้อมรับ-คืน RGV 8 คันที่ให้ลูกค้าใช้งานก่อน",
           "documentsRequired": [
@@ -201,7 +201,7 @@
           "plan": "งานงวดสุดท้าย",
           "paymentDate": "2025-12-15",
           "percent": 8.24,
-          "amount": 15607422.24,
+          "amount": 14933386.90,
           "status": "pending",
           "description": "เมื่อดำเนินการส่งมอบงานติดตั้งและจัดเก็บสินค้าอัตโนมัติทั้งระบบ พร้อมใช้งานโดยไม่มีปัญหาหยุดระบบ > 4 ชม. เป็นเวลา 30 วัน และผู้ซื้อตรวจรับภายใน 7 วัน",
           "documentsRequired": [
