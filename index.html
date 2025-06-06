@@ -2312,12 +2312,12 @@
       // Add cumulative cash flow footer to Cash Flow Dashboard
       const totalReceivableCashFlow = customer ? customer.total : 0;
       const totalPayableCashFlow = vendors.reduce((sum, v) => sum + v.total, 0);
-      const netCashFlowCashFlow = totalReceivableCashFlow - totalPayableCashFlow;
-      const profitMarginCashFlow = totalReceivableCashFlow > 0 ? ((netCashFlowCashFlow / totalReceivableCashFlow) * 100) : 0;
+      const netCashFlow = totalReceivableCashFlow - totalPayableCashFlow;
+      const profitMarginCashFlow = totalReceivableCashFlow > 0 ? ((netCashFlow / totalReceivableCashFlow) * 100) : 0;
       
       container.insertAdjacentHTML('beforeend', `
           <div style="
-            background: linear-gradient(135deg, ${netCashFlowCashFlow >= 0 ? 'var(--accent)' : '#ef4444'}, ${netCashFlowCashFlow >= 0 ? '#059669' : '#dc2626'}); 
+            background: linear-gradient(135deg, ${netCashFlow >= 0 ? 'var(--accent)' : '#ef4444'}, ${netCashFlow >= 0 ? '#059669' : '#dc2626'});
             color: white; 
             padding: 2rem; 
             border-radius: 16px; 
@@ -2327,10 +2327,10 @@
           ">
             <div style="font-size: 1rem; margin-bottom: 0.5rem; opacity: 0.9;">💼 กระแสเงินสะสม</div>
             <div style="font-size: 2.2rem; font-weight: bold; margin-bottom: 0.5rem;">
-              ${netCashFlowCashFlow >= 0 ? '📈' : '📉'} ${fmt(Math.abs(netCashFlowCashFlow))} บาท
+              ${netCashFlow >= 0 ? '📈' : '📉'} ${fmt(Math.abs(netCashFlow))} บาท
             </div>
             <div style="font-size: 0.9rem; opacity: 0.8;">
-              ${netCashFlowCashFlow >= 0 ? 'เงินคงเหลือสุทธิ' : 'เงินขาดแคลนสุทธิ'} • อัตรากำไร ${profitMarginCashFlow.toFixed(1)}%
+              ${netCashFlow >= 0 ? 'เงินคงเหลือสุทธิ' : 'เงินขาดแคลนสุทธิ'} • อัตรากำไร ${profitMarginCashFlow.toFixed(1)}%
             </div>
           </div>
       `);
